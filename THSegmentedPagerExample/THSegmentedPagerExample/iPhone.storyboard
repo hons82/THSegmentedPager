@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Fgj-lG-0VI">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Segmented Pager-->
+        <scene sceneID="2DU-rm-Yeg">
+            <objects>
+                <viewController storyboardIdentifier="THSegmentedPager" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fgj-lG-0VI" customClass="THSegmentedPager" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qNJ-aF-gwx"/>
+                        <viewControllerLayoutGuide type="bottom" id="VpE-rt-VzH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3lg-98-dCS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-3P-RZK" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="20" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BEH-fF-s4w"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-Lh-r1J">
+                                <rect key="frame" x="0.0" y="80" width="320" height="488"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.69019607839999997" green="0.80000000000000004" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VpE-rt-VzH" firstAttribute="top" secondItem="d1d-Lh-r1J" secondAttribute="bottom" id="2RR-8G-0wO"/>
+                            <constraint firstAttribute="trailing" secondItem="d1d-Lh-r1J" secondAttribute="trailing" id="Aoa-xn-3hB"/>
+                            <constraint firstItem="tEO-3P-RZK" firstAttribute="top" secondItem="qNJ-aF-gwx" secondAttribute="bottom" id="FCp-fg-wF7"/>
+                            <constraint firstItem="d1d-Lh-r1J" firstAttribute="top" secondItem="tEO-3P-RZK" secondAttribute="bottom" id="Kqk-T9-NSR"/>
+                            <constraint firstItem="d1d-Lh-r1J" firstAttribute="leading" secondItem="3lg-98-dCS" secondAttribute="leading" id="Uaf-C6-bw0"/>
+                            <constraint firstItem="tEO-3P-RZK" firstAttribute="leading" secondItem="3lg-98-dCS" secondAttribute="leading" id="VBt-7c-l3s"/>
+                            <constraint firstAttribute="trailing" secondItem="tEO-3P-RZK" secondAttribute="trailing" id="k0r-eS-auv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentContainer" destination="d1d-Lh-r1J" id="arq-Jg-Wii"/>
+                        <outlet property="pageControl" destination="tEO-3P-RZK" id="Qqc-rD-5l3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iHY-dO-f3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="131"/>
+        </scene>
+        <!--Sample Paged View Controller-->
+        <scene sceneID="0AF-MY-o9r">
+            <objects>
+                <viewController storyboardIdentifier="SamplePagedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7br-6x-IMC" customClass="SamplePagedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mst-0I-2ty"/>
+                        <viewControllerLayoutGuide type="bottom" id="dsF-Oz-JGE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vTx-mU-wAe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jyo-67-dZF">
+                                <rect key="frame" x="139" y="274" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Jyo-67-dZF" secondAttribute="centerY" id="Xjq-Lo-a5n"/>
+                            <constraint firstAttribute="centerX" secondItem="Jyo-67-dZF" secondAttribute="centerX" id="dxy-oT-5N5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NDI-2H-Qvp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754" y="131"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -19,6 +19,10 @@
 		99C8C822198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
 		99C8C82A198281240039193A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C828198281240039193A /* InfoPlist.strings */; };
 		99C8C82C198281240039193A /* THSegmentedPagerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C82B198281240039193A /* THSegmentedPagerExampleTests.m */; };
+		99C8C836198281580039193A /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C835198281580039193A /* iPhone.storyboard */; };
+		99C8C839198285AD0039193A /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C838198285AD0039193A /* THSegmentedPager.m */; };
+		99C8C84319828B720039193A /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C84219828B720039193A /* HMSegmentedControl.m */; };
+		99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C84619829C650039193A /* SamplePagedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,14 @@
 		99C8C827198281240039193A /* THSegmentedPagerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THSegmentedPagerExampleTests-Info.plist"; sourceTree = "<group>"; };
 		99C8C829198281240039193A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		99C8C82B198281240039193A /* THSegmentedPagerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPagerExampleTests.m; sourceTree = "<group>"; };
+		99C8C835198281580039193A /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		99C8C837198285AD0039193A /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THSegmentedPager.h; path = ../THSegmentedPager/THSegmentedPager.h; sourceTree = SOURCE_ROOT; };
+		99C8C838198285AD0039193A /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THSegmentedPager.m; path = ../THSegmentedPager/THSegmentedPager.m; sourceTree = SOURCE_ROOT; };
+		99C8C83F198286C90039193A /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSegmentedControl.h; sourceTree = "<group>"; };
+		99C8C84219828B720039193A /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSegmentedControl.m; sourceTree = "<group>"; };
+		99C8C84419829C0B0039193A /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = THSegmentedPageViewControllerDelegate.h; path = ../THSegmentedPager/THSegmentedPageViewControllerDelegate.h; sourceTree = SOURCE_ROOT; };
+		99C8C84519829C650039193A /* SamplePagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePagedViewController.h; sourceTree = "<group>"; };
+		99C8C84619829C650039193A /* SamplePagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePagedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +119,14 @@
 		99C8C80C198281240039193A /* THSegmentedPagerExample */ = {
 			isa = PBXGroup;
 			children = (
+				99C8C84519829C650039193A /* SamplePagedViewController.h */,
+				99C8C84619829C650039193A /* SamplePagedViewController.m */,
 				99C8C815198281240039193A /* AppDelegate.h */,
 				99C8C816198281240039193A /* AppDelegate.m */,
 				99C8C818198281240039193A /* Images.xcassets */,
 				99C8C80D198281240039193A /* Supporting Files */,
+				99C8C835198281580039193A /* iPhone.storyboard */,
+				99C8C83A198286860039193A /* THSegmentedPager */,
 			);
 			path = THSegmentedPagerExample;
 			sourceTree = "<group>";
@@ -142,6 +158,28 @@
 				99C8C828198281240039193A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99C8C83A198286860039193A /* THSegmentedPager */ = {
+			isa = PBXGroup;
+			children = (
+				99C8C83E198286A70039193A /* HMSegmentedControl */,
+				99C8C837198285AD0039193A /* THSegmentedPager.h */,
+				99C8C838198285AD0039193A /* THSegmentedPager.m */,
+				99C8C84419829C0B0039193A /* THSegmentedPageViewControllerDelegate.h */,
+			);
+			name = THSegmentedPager;
+			path = ../../THSegmentedPager;
+			sourceTree = "<group>";
+		};
+		99C8C83E198286A70039193A /* HMSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				99C8C84219828B720039193A /* HMSegmentedControl.m */,
+				99C8C83F198286C90039193A /* HMSegmentedControl.h */,
+			);
+			name = HMSegmentedControl;
+			path = ../THSegmentedPager/HMSegmentedControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99C8C811198281240039193A /* InfoPlist.strings in Resources */,
+				99C8C836198281580039193A /* iPhone.storyboard in Resources */,
 				99C8C819198281240039193A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,8 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99C8C839198285AD0039193A /* THSegmentedPager.m in Sources */,
 				99C8C817198281240039193A /* AppDelegate.m in Sources */,
+				99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */,
 				99C8C813198281240039193A /* main.m in Sources */,
+				99C8C84319828B720039193A /* HMSegmentedControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +479,7 @@
 				99C8C831198281240039193A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99C8C832198281240039193A /* Build configuration list for PBXNativeTarget "THSegmentedPagerExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +488,7 @@
 				99C8C834198281240039193A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
