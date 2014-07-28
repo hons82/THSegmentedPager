@@ -3,6 +3,11 @@ THSegmentedPager
 
 This control combines the great [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedContro) with a UIPageviewController that takes care of showing the right page when clicking on the HMSegmentedControl and updating the selection when the UIPageviewController scrolls.
 
+# Screenshots
+
+![iPhone Portrait](/Screenshots/Screenshot1.png?raw=true)
+![iPhone Landscape](/Screenshots/Screenshot2.png?raw=true)
+
 # Installation
 
 ### CocoaPods
