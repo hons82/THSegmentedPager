@@ -16,15 +16,26 @@ This control combines the great [HMSegmentedControl](https://github.com/HeshamMe
 
 ### CocoaPods
 
-I'm planning to release it as pod sooner or later
+Install with [CocoaPods](http://cocoapods.org) by adding the following to your Podfile:
+
+``` ruby
+platform :ios, '6.1'
+pod 'THSegmentedPager', '~> 0.0.1'
+```
+
+**Note**: We follow http://semver.org for versioning the public API.
 
 ### Manually
 
-Copy the folder into your project, wire the outlets and fill the control with pages
+Or copy the `THSegmentedPager/` directory from this repo into your project.
 
 # Usage
 
 Have a look at the Example Project
+
+#Contributions
+
+...are really welcome.
 
 # License
 
