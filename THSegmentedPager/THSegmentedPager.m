@@ -58,7 +58,7 @@
                                            animated:NO
                                          completion:NULL];
     }
-    [self.pageControl setSectionTitles:[self titleLabels]];
+    [self updateTitleLabels];
 }
 
 #pragma mark - Cleanup
@@ -76,6 +76,11 @@
 
 #pragma mark - Setup
 
+- (void)updateTitleLabels
+{
+    [self.pageControl setSectionTitles:[self titleLabels]];
+}
+
 - (NSArray *)titleLabels
 {
     NSMutableArray *titles = [NSMutableArray new];
@@ -83,10 +88,38 @@
         if ([vc conformsToProtocol:@protocol(THSegmentedPageViewControllerDelegate)] && [vc respondsToSelector:@selector(viewControllerTitle)] && [((UIViewController<THSegmentedPageViewControllerDelegate> *)vc) viewControllerTitle]) {
             [titles addObject:[((UIViewController<THSegmentedPageViewControllerDelegate> *)vc) viewControllerTitle]];
         } else {
-            [titles addObject:@"NoTitle"];
+            [titles addObject:vc.title ? vc.title : NSLocalizedString(@"NoTitle",@"")];
         }
     }
     return [titles copy];
+}
+
+- (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated
+{
+    [UIView animateWithDuration:animated ? 0.25f : 0.f animations:^{
+        if (hidden) {
+            self.pageControl.alpha = 0.0f;
+        } else {
+            self.pageControl.alpha = 1.0f;
+        }
+    }];
+    [self.pageControl setHidden:hidden];
+    [self.view setNeedsLayout];
+}
+
+- (UIViewController *)selectedController
+{
+    return self.pages[[self.pageControl selectedSegmentIndex]];
+}
+
+- (void)setSelectedPageIndex:(NSUInteger)index animated:(BOOL)animated {
+    if (index < [self.pages count]) {
+        [self.pageControl setSelectedSegmentIndex:index animated:YES];
+        [self.pageViewController setViewControllers:@[self.pages[index]]
+                                          direction:UIPageViewControllerNavigationDirectionForward
+                                           animated:animated
+                                         completion:NULL];
+    }
 }
 
 #pragma mark - UIPageViewControllerDataSource
@@ -127,7 +160,7 @@
 - (void)pageControlValueChanged:(id)sender
 {
     UIPageViewControllerNavigationDirection direction = [self.pageControl selectedSegmentIndex] > [self.pages indexOfObject:[self.pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
-    [self.pageViewController setViewControllers:@[self.pages[[self.pageControl selectedSegmentIndex]]]
+    [self.pageViewController setViewControllers:@[[self selectedController]]
                                       direction:direction
                                        animated:YES
                                      completion:NULL];

@@ -11,6 +11,7 @@
 @protocol THSegmentedPageViewControllerDelegate <NSObject>
 
 @optional
+
 - (NSString *)viewControllerTitle;
 
 @end

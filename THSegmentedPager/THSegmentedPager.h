@@ -16,4 +16,11 @@
 
 @property (strong, nonatomic)NSMutableArray *pages;
 
+- (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated;
+- (void)setSelectedPageIndex:(NSUInteger)index animated:(BOOL)animated;
+
+- (UIViewController *)selectedController;
+
+- (void)updateTitleLabels;
+
 @end
