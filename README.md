@@ -20,7 +20,7 @@ Install with [CocoaPods](http://cocoapods.org) by adding the following to your P
 
 ``` ruby
 platform :ios, '6.1'
-pod 'THSegmentedPager', '~> 0.0.3'
+pod 'THSegmentedPager', '~> 0.0.4'
 ```
 
 **Note**: We follow http://semver.org for versioning the public API.
@@ -31,7 +31,7 @@ Or copy the `THSegmentedPager/` directory from this repo into your project.
 
 # Features
 
-### V0.0.3
+### V0.0.4
 
 - The control is now able to allocate viewcontrollers from the actual storyboard by just knowing a list of identifiers
 
