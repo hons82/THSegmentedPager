@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         	= "THSegmentedPager"
-  s.version      	= "0.0.2"
+  s.version      	= "0.0.3"
   s.summary      	= "Simple plugin-sample using the HMSegmentedControl and a UIPageViewController to show Tabs"
   s.homepage     	= "https://github.com/hons82/THSegmentedPager"
   s.license      	= { :type => 'MIT', :file => 'LICENSE.md' }

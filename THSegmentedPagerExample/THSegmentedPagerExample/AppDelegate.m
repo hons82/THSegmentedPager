@@ -10,11 +10,14 @@
 #import "THSegmentedPager.h"
 #import "SamplePagedViewController.h"
 
+//#define LOAD_WITH_IDENTIFIERS = 0;
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     THSegmentedPager *pager = (THSegmentedPager *)self.window.rootViewController;
+#ifndef LOAD_WITH_IDENTIFIERS
     NSMutableArray *pages = [NSMutableArray new];
     for (int i = 1; i < 4; i++) {
         // Create a new view controller and pass suitable data.
@@ -24,6 +27,9 @@
         [pages addObject:pagedViewController];
     }
     [pager setPages:pages];
+#else
+    [pager setupPagesFromStoryboardWithIdentifiers:@[@"SamplePagedViewController",@"SamplePagedViewController",@"SamplePagedViewController"]];
+#endif
     return YES;
 }
 

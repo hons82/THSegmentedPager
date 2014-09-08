@@ -20,7 +20,7 @@ Install with [CocoaPods](http://cocoapods.org) by adding the following to your P
 
 ``` ruby
 platform :ios, '6.1'
-pod 'THSegmentedPager', '~> 0.0.2'
+pod 'THSegmentedPager', '~> 0.0.3'
 ```
 
 **Note**: We follow http://semver.org for versioning the public API.
@@ -29,13 +29,36 @@ pod 'THSegmentedPager', '~> 0.0.2'
 
 Or copy the `THSegmentedPager/` directory from this repo into your project.
 
+# Features
+
+### V0.0.3
+
+- The control is now able to allocate viewcontrollers from the actual storyboard by just knowing a list of identifiers
+
 # Usage
 
-Have a look at the Example Project
+This is a sample initialization taken from the ExampleProject.
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    THSegmentedPager *pager = (THSegmentedPager *)self.window.rootViewController;
+    NSMutableArray *pages = [NSMutableArray new];
+    for (int i = 1; i < 4; i++) {
+        // Create a new view controller and pass suitable data.
+        SamplePagedViewController *pagedViewController = [pager.storyboard instantiateViewControllerWithIdentifier:@"SamplePagedViewController"];
+        [pagedViewController setViewTitle:[NSString stringWithFormat:@"Page %d",i]];
+        [pagedViewController.view setBackgroundColor:[UIColor colorWithHue:((i/8)%20)/20.0+0.02 saturation:(i%8+3)/10.0 brightness:91/100.0 alpha:1]];
+        [pages addObject:pagedViewController];
+    }
+    [pager setPages:pages];
+    return YES;
+}
+```
 
 #Contributions
 
-...are really welcome.
+...are really welcome. If you have an idea just fork the library change it and if its useful for others and not affecting the functionality of the library for other users I'll insert it
 
 # License
 
