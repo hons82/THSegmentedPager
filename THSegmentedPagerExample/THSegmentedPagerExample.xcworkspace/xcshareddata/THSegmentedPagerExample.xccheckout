@@ -10,29 +10,29 @@
 	<string>THSegmentedPagerExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>68859359-9EAB-4E5C-A30B-36965366566D</key>
+		<key>28D1BF7DB311DBDC3521C5ECE4B3F708CC3BC6C2</key>
 		<string>https://github.com/hons82/THSegmentedPager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>THSegmentedPagerExample/THSegmentedPagerExample.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>68859359-9EAB-4E5C-A30B-36965366566D</key>
+		<key>28D1BF7DB311DBDC3521C5ECE4B3F708CC3BC6C2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/hons82/THSegmentedPager.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>68859359-9EAB-4E5C-A30B-36965366566D</string>
+	<string>28D1BF7DB311DBDC3521C5ECE4B3F708CC3BC6C2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>68859359-9EAB-4E5C-A30B-36965366566D</string>
+			<string>28D1BF7DB311DBDC3521C5ECE4B3F708CC3BC6C2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>THSegmentedPager</string>
 		</dict>

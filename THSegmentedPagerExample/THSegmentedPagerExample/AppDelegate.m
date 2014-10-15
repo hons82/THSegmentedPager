@@ -16,7 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    THSegmentedPager *pager = (THSegmentedPager *)self.window.rootViewController;
+    THSegmentedPager *pager = (THSegmentedPager *)((UINavigationController *)self.window.rootViewController).topViewController;
 #ifndef LOAD_WITH_IDENTIFIERS
     NSMutableArray *pages = [NSMutableArray new];
     for (int i = 1; i < 4; i++) {

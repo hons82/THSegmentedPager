@@ -53,10 +53,7 @@
 {
     [super viewWillAppear:animated];
     if ([self.pages count]>0) {
-        [self.pageViewController setViewControllers:@[self.pages[0]]
-                                          direction:UIPageViewControllerNavigationDirectionForward
-                                           animated:NO
-                                         completion:NULL];
+        [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:NO];
     }
     [self updateTitleLabels];
 }
