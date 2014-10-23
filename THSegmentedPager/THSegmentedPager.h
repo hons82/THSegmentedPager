@@ -11,6 +11,7 @@
 
 @interface THSegmentedPager : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
+@property (strong, nonatomic)UIPageViewController *pageViewController;
 @property (weak, nonatomic) IBOutlet HMSegmentedControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIView *contentContainer;
 

@@ -10,7 +10,7 @@
 #import "THSegmentedPageViewControllerDelegate.h"
 
 @interface THSegmentedPager ()
-@property (strong, nonatomic)UIPageViewController *pageViewController;
+
 @end
 
 @implementation THSegmentedPager
@@ -53,7 +53,7 @@
 {
     [super viewWillAppear:animated];
     if ([self.pages count]>0) {
-        [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:NO];
+        [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:YES];
     }
     [self updateTitleLabels];
 }
