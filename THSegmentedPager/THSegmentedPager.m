@@ -53,7 +53,7 @@
 {
     [super viewWillAppear:animated];
     if ([self.pages count]>0) {
-        [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:YES];
+        [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:animated];
     }
     [self updateTitleLabels];
 }

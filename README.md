@@ -31,6 +31,11 @@ Or copy the `THSegmentedPager/` directory from this repo into your project.
 
 # Features
 
+### V0.1.X
+
+- If it is used in a UINavigationController it will show the same Viewcontroller when it comes back
+- [Pull Request](https://github.com/hons82/THSegmentedPager/pull/3)
+
 ### V0.0.4
 
 - The control is now able to allocate viewcontrollers from the actual storyboard by just knowing a list of identifiers
