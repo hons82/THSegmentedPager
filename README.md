@@ -20,7 +20,7 @@ Install with [CocoaPods](http://cocoapods.org) by adding the following to your P
 
 ``` ruby
 platform :ios, '6.1'
-pod 'THSegmentedPager', '~> 0.0.4'
+pod 'THSegmentedPager', '~> 0.1.2'
 ```
 
 **Note**: We follow http://semver.org for versioning the public API.
@@ -34,7 +34,7 @@ Or copy the `THSegmentedPager/` directory from this repo into your project.
 ### V0.1.X
 
 - If it is used in a UINavigationController it will show the same Viewcontroller when it comes back
-- [Pull Request](https://github.com/hons82/THSegmentedPager/pull/3)
+- [Pull Request](https://github.com/hons82/THSegmentedPager/pull/3) thx to [noelrocha](https://github.com/noelrocha)
 
 ### V0.0.4
 
