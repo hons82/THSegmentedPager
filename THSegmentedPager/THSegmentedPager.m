@@ -18,14 +18,12 @@
 @synthesize pageViewController = _pageViewController;
 @synthesize pages = _pages;
 
-- (NSMutableArray *)pages
-{
+- (NSMutableArray *)pages {
     if (!_pages)_pages = [NSMutableArray new];
     return _pages;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Init PageViewController
     self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
@@ -49,8 +47,7 @@
     self.pageControl.showVerticalDivider = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if ([self.pages count]>0) {
         [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:animated];
@@ -60,21 +57,18 @@
 
 #pragma mark - Cleanup
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Setup
 
-- (void)setupPagesFromStoryboardWithIdentifiers:(NSArray *)identifiers
-{
+- (void)setupPagesFromStoryboardWithIdentifiers:(NSArray *)identifiers {
     if (self.storyboard) {
         for (NSString *identifier in identifiers) {
             UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
@@ -85,13 +79,11 @@
     }
 }
 
-- (void)updateTitleLabels
-{
+- (void)updateTitleLabels {
     [self.pageControl setSectionTitles:[self titleLabels]];
 }
 
-- (NSArray *)titleLabels
-{
+- (NSArray *)titleLabels {
     NSMutableArray *titles = [NSMutableArray new];
     for (UIViewController *vc in self.pages) {
         if ([vc conformsToProtocol:@protocol(THSegmentedPageViewControllerDelegate)] && [vc respondsToSelector:@selector(viewControllerTitle)] && [((UIViewController<THSegmentedPageViewControllerDelegate> *)vc) viewControllerTitle]) {
@@ -103,8 +95,7 @@
     return [titles copy];
 }
 
-- (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated
-{
+- (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated {
     [UIView animateWithDuration:animated ? 0.25f : 0.f animations:^{
         if (hidden) {
             self.pageControl.alpha = 0.0f;
@@ -116,8 +107,7 @@
     [self.view setNeedsLayout];
 }
 
-- (UIViewController *)selectedController
-{
+- (UIViewController *)selectedController {
     return self.pages[[self.pageControl selectedSegmentIndex]];
 }
 
@@ -133,8 +123,7 @@
 
 #pragma mark - UIPageViewControllerDataSource
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
-{
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = [self.pages indexOfObject:viewController];
     
     if ((index == NSNotFound) || (index == 0)) {
@@ -144,8 +133,7 @@
     return self.pages[--index];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
-{
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = [self.pages indexOfObject:viewController];
     
     if ((index == NSNotFound)||(index+1 >= [self.pages count])) {
@@ -155,8 +143,7 @@
     return self.pages[++index];
 }
 
-- (void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
-{
+- (void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (!completed){
         return;
     }
@@ -166,8 +153,7 @@
 
 #pragma mark - Callback
 
-- (void)pageControlValueChanged:(id)sender
-{
+- (void)pageControlValueChanged:(id)sender {
     UIPageViewControllerNavigationDirection direction = [self.pageControl selectedSegmentIndex] > [self.pages indexOfObject:[self.pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
     [self.pageViewController setViewControllers:@[[self selectedController]]
                                       direction:direction
