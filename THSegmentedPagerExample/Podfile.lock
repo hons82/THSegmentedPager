@@ -1,10 +1,10 @@
 PODS:
-  - HMSegmentedControl@hons82 (1.4.2)
+  - HMSegmentedControl@hons82 (1.4.3)
 
 DEPENDENCIES:
-  - HMSegmentedControl@hons82 (~> 1.4.2)
+  - HMSegmentedControl@hons82 (~> 1.4.3)
 
 SPEC CHECKSUMS:
-  HMSegmentedControl@hons82: 1453187eeba173575a66897400ca35e6a70f6990
+  HMSegmentedControl@hons82: 2331cbf6edf5e5a07d8f8b3916aade7d92b0f440
 
-COCOAPODS: 0.34.4
+COCOAPODS: 0.35.0
