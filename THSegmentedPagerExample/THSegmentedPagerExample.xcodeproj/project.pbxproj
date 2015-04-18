@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CCB8815A52E480C87E30210 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0378D4EB5754459AF84BA34 /* libPods.a */; };
+		502EEB741AE2DBFF000CFA05 /* THSegmentedPagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */; };
+		502EEB771AE2DCBD000CFA05 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */; };
 		6A1FCE59DEC24EB61262FDDC /* libPods-THSegmentedPagerExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */; };
 		99C8C807198281240039193A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C806198281240039193A /* Foundation.framework */; };
 		99C8C809198281240039193A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C808198281240039193A /* CoreGraphics.framework */; };
@@ -20,7 +22,6 @@
 		99C8C821198281240039193A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C806198281240039193A /* Foundation.framework */; };
 		99C8C822198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
 		99C8C82A198281240039193A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C828198281240039193A /* InfoPlist.strings */; };
-		99C8C82C198281240039193A /* THSegmentedPagerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C82B198281240039193A /* THSegmentedPagerExampleTests.m */; };
 		99C8C836198281580039193A /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C835198281580039193A /* iPhone.storyboard */; };
 		99C8C839198285AD0039193A /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C838198285AD0039193A /* THSegmentedPager.m */; };
 		99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C84619829C650039193A /* SamplePagedViewController.m */; };
@@ -38,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THSegmentedPagerExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPagerTests.m; sourceTree = "<group>"; };
+		502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THSegmentedPagerExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99C8C803198281240039193A /* THSegmentedPagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THSegmentedPagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C8C806198281240039193A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,7 +57,6 @@
 		99C8C81F198281240039193A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		99C8C827198281240039193A /* THSegmentedPagerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THSegmentedPagerExampleTests-Info.plist"; sourceTree = "<group>"; };
 		99C8C829198281240039193A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		99C8C82B198281240039193A /* THSegmentedPagerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPagerExampleTests.m; sourceTree = "<group>"; };
 		99C8C835198281580039193A /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		99C8C837198285AD0039193A /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THSegmentedPager.h; path = ../THSegmentedPager/THSegmentedPager.h; sourceTree = SOURCE_ROOT; };
 		99C8C838198285AD0039193A /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THSegmentedPager.m; path = ../THSegmentedPager/THSegmentedPager.m; sourceTree = SOURCE_ROOT; };
@@ -102,6 +104,14 @@
 				F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		502EEB751AE2DC9F000CFA05 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */,
+			);
+			name = Fixtures;
 			sourceTree = "<group>";
 		};
 		99C8C7FA198281240039193A = {
@@ -168,8 +178,8 @@
 		99C8C825198281240039193A /* THSegmentedPagerExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				99C8C82B198281240039193A /* THSegmentedPagerExampleTests.m */,
 				99C8C826198281240039193A /* Supporting Files */,
+				502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */,
 			);
 			path = THSegmentedPagerExampleTests;
 			sourceTree = "<group>";
@@ -177,6 +187,7 @@
 		99C8C826198281240039193A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				502EEB751AE2DC9F000CFA05 /* Fixtures */,
 				99C8C827198281240039193A /* THSegmentedPagerExampleTests-Info.plist */,
 				99C8C828198281240039193A /* InfoPlist.strings */,
 			);
@@ -284,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99C8C82A198281240039193A /* InfoPlist.strings in Resources */,
+				502EEB771AE2DCBD000CFA05 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C8C82C198281240039193A /* THSegmentedPagerExampleTests.m in Sources */,
+				502EEB741AE2DBFF000CFA05 /* THSegmentedPagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
