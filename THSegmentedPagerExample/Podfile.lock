@@ -5,6 +5,6 @@ DEPENDENCIES:
   - HMSegmentedControl@hons82 (~> 1.4.3)
 
 SPEC CHECKSUMS:
-  HMSegmentedControl@hons82: 2331cbf6edf5e5a07d8f8b3916aade7d92b0f440
+  HMSegmentedControl@hons82: c117190e2dd52599941768780b6ec1a2a6e39e06
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.4
