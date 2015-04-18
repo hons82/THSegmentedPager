@@ -1,6 +1,7 @@
 THSegmentedPager  
 ===
 
+[![Build Status](https://travis-ci.org/hons82/THSegmentedPager.png)](https://travis-ci.org/hons82/THSegmentedPager)
 [![Pod Version](http://img.shields.io/cocoapods/v/THSegmentedPager.svg?style=flat)](http://cocoadocs.org/docsets/THSegmentedPager/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/THSegmentedPager.svg?style=flat)](http://cocoadocs.org/docsets/THSegmentedPager/)
 [![Pod License](http://img.shields.io/cocoapods/l/THSegmentedPager.svg?style=flat)](http://opensource.org/licenses/MIT)
