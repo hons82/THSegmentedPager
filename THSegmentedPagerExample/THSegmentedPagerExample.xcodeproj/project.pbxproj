@@ -106,8 +106,9 @@
 				99C8C804198281240039193A /* Products */,
 				4ABE35039A712EBCB9D85E14 /* Pods */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 		};
 		99C8C804198281240039193A /* Products */ = {
 			isa = PBXGroup;
