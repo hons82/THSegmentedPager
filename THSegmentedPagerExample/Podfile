@@ -2,3 +2,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '6.1'
 
 pod 'HMSegmentedControl@hons82', '~> 1.4.3'
+
+target 'THSegmentedPagerExampleTests', :exclusive => true do
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  pod 'Specta'
+  pod 'Expecta'
+end

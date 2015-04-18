@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3CCB8815A52E480C87E30210 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0378D4EB5754459AF84BA34 /* libPods.a */; };
+		6A1FCE59DEC24EB61262FDDC /* libPods-THSegmentedPagerExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */; };
 		99C8C807198281240039193A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C806198281240039193A /* Foundation.framework */; };
 		99C8C809198281240039193A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C808198281240039193A /* CoreGraphics.framework */; };
 		99C8C80B198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THSegmentedPagerExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THSegmentedPagerExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99C8C803198281240039193A /* THSegmentedPagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THSegmentedPagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C8C806198281240039193A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99C8C808198281240039193A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +64,7 @@
 		B0378D4EB5754459AF84BA34 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86019CAE24EC80D2397F99D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E9CACEA33C0AB51FDF71D7B5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THSegmentedPagerExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 				99C8C820198281240039193A /* XCTest.framework in Frameworks */,
 				99C8C822198281240039193A /* UIKit.framework in Frameworks */,
 				99C8C821198281240039193A /* Foundation.framework in Frameworks */,
+				6A1FCE59DEC24EB61262FDDC /* libPods-THSegmentedPagerExampleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,8 @@
 			children = (
 				E9CACEA33C0AB51FDF71D7B5 /* Pods.debug.xcconfig */,
 				B86019CAE24EC80D2397F99D /* Pods.release.xcconfig */,
+				57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */,
+				F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -127,6 +134,7 @@
 				99C8C80A198281240039193A /* UIKit.framework */,
 				99C8C81F198281240039193A /* XCTest.framework */,
 				B0378D4EB5754459AF84BA34 /* libPods.a */,
+				38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C8C832198281240039193A /* Build configuration list for PBXNativeTarget "THSegmentedPagerExampleTests" */;
 			buildPhases = (
+				034D194D6DD5C8CB06F7360E /* Check Pods Manifest.lock */,
 				99C8C81A198281240039193A /* Sources */,
 				99C8C81B198281240039193A /* Frameworks */,
 				99C8C81C198281240039193A /* Resources */,
+				E802B37DE433CB88DDBF430D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,6 +290,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		034D194D6DD5C8CB06F7360E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		2732873956584C6784AB8C11 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +333,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E802B37DE433CB88DDBF430D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -462,6 +502,7 @@
 		};
 		99C8C833198281240039193A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/THSegmentedPagerExample.app/THSegmentedPagerExample";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -484,6 +525,7 @@
 		};
 		99C8C834198281240039193A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/THSegmentedPagerExample.app/THSegmentedPagerExample";
 				FRAMEWORK_SEARCH_PATHS = (
