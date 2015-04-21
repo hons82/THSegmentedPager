@@ -1,9 +1,11 @@
 THSegmentedPager  
 ===
 
+[![Build Status](https://travis-ci.org/hons82/THSegmentedPager.png)](https://travis-ci.org/hons82/THSegmentedPager)
 [![Pod Version](http://img.shields.io/cocoapods/v/THSegmentedPager.svg?style=flat)](http://cocoadocs.org/docsets/THSegmentedPager/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/THSegmentedPager.svg?style=flat)](http://cocoadocs.org/docsets/THSegmentedPager/)
 [![Pod License](http://img.shields.io/cocoapods/l/THSegmentedPager.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Coverage Status](https://coveralls.io/repos/hons82/THSegmentedPager/badge.svg)](https://coveralls.io/r/hons82/THSegmentedPager)
 
 This control combines the great [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedContro) with a UIPageviewController that takes care of showing the right page when clicking on the HMSegmentedControl and updating the selection when the UIPageviewController scrolls.
 
