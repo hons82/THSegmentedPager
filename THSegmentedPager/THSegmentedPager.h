@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <HMSegmentedControl@hons82/HMSegmentedControl.h>
+#import <HMSegmentedControl/HMSegmentedControl.h>
 
 @interface THSegmentedPager : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 

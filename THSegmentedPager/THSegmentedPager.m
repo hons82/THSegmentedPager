@@ -39,12 +39,13 @@
                forControlEvents:UIControlEventValueChanged];
     
     self.pageControl.backgroundColor = [UIColor colorWithRed:69/255.0 green:69/255.0 blue:69/255.0 alpha:1];
-    self.pageControl.textColor = [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1];
+    self.pageControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1]};
     self.pageControl.selectionIndicatorColor = [UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1];
     self.pageControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    self.pageControl.selectedTextColor = [UIColor whiteColor];
+    self.pageControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
     self.pageControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
-    self.pageControl.showVerticalDivider = YES;
+    self.pageControl.verticalDividerEnabled = YES;
+    self.pageControl.verticalDividerColor = [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

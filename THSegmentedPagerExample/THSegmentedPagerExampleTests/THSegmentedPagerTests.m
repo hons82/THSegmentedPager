@@ -43,6 +43,7 @@ context(@"with one page", ^{
         expect(subject.selectedController.title).to.equal(@"Baz");
     });
     it(@"looks good", ^{
+        //expect(subject).to.recordSnapshot();
         expect(subject).to.haveValidSnapshot();
     });
 });
@@ -58,6 +59,7 @@ context(@"with Foo, Bar, Baz pages", ^{
     });
 
     it(@"looks good", ^{
+        //expect(subject).to.recordSnapshot();
         expect(subject).to.haveValidSnapshot();
     });
 
@@ -71,6 +73,7 @@ context(@"with Foo, Bar, Baz pages", ^{
         });
 
         it(@"looks good", ^{
+            //expect(subject).to.recordSnapshot();
             expect(subject).to.haveValidSnapshot();
         });
     });

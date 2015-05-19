@@ -7,7 +7,7 @@ THSegmentedPager
 [![Pod License](http://img.shields.io/cocoapods/l/THSegmentedPager.svg?style=flat)](http://opensource.org/licenses/MIT)
 [![Coverage Status](https://coveralls.io/repos/hons82/THSegmentedPager/badge.svg)](https://coveralls.io/r/hons82/THSegmentedPager)
 
-This control combines the great [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedContro) with a UIPageviewController that takes care of showing the right page when clicking on the HMSegmentedControl and updating the selection when the UIPageviewController scrolls.
+This control combines the great [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl) with a UIPageviewController that takes care of showing the right page when clicking on the HMSegmentedControl and updating the selection when the UIPageviewController scrolls.
 
 # Screenshots
 
@@ -21,7 +21,7 @@ This control combines the great [HMSegmentedControl](https://github.com/HeshamMe
 Install with [CocoaPods](http://cocoapods.org) by adding the following to your Podfile:
 
 ``` ruby
-platform :ios, '6.1'
+platform :ios, '7.0'
 pod 'THSegmentedPager', '~> 1.0.0'
 ```
 
@@ -35,23 +35,20 @@ Or copy the `THSegmentedPager/` directory from this repo into your project.
 
 If you prefer the manual approach be aware that you'll need to import the dependencies which in this case are
 
-- [HMSegmentedControl@hons82](https://github.com/hons82/HMSegmentedControl)
+- [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl)
 
 This will cause some errors with imports not found correctly which you'll need to solve manually too
 
 # Features
 
+### V1.1.X
+
+- With this version we switch back to the original [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl) and as he's dropping support for iOS6 we'll need to follow
+
 ### V1.0.X
-
-- I'm using it in a real world project, so it's about time to promote it to 1.0.0
-
-### V0.1.X
 
 - If it is used in a UINavigationController it will show the same Viewcontroller when it comes back
 - [Pull Request](https://github.com/hons82/THSegmentedPager/pull/3) thx to [noelrocha](https://github.com/noelrocha)
-
-### V0.0.4
-
 - The control is now able to allocate viewcontrollers from the actual storyboard by just knowing a list of identifiers
 
 # Usage
@@ -78,6 +75,12 @@ This is a sample initialization taken from the ExampleProject.
 #Contributions
 
 ...are really welcome. If you have an idea just fork the library change it and if its useful for others and not affecting the functionality of the library for other users I'll insert it
+
+###Contributors
+
+- [Victor Ilyukevich](https://github.com/yas375)
+-- Added automated Tests
+-- Added Travis CI and Coverall.io support
 
 # License
 
