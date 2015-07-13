@@ -22,7 +22,7 @@ Install with [CocoaPods](http://cocoapods.org) by adding the following to your P
 
 ``` ruby
 platform :ios, '7.0'
-pod 'THSegmentedPager', '~> 1.0.0'
+pod 'THSegmentedPager', '~> 1.1.1'
 ```
 
 **Note**: We follow http://semver.org for versioning the public API.
@@ -43,6 +43,7 @@ This will cause some errors with imports not found correctly which you'll need t
 
 ### V1.1.X
 
+- Fixed issue [#12](https://github.com/hons82/THSegmentedPager/issues/12)
 - With this version we switch back to the original [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl) and as he's dropping support for iOS6 we'll need to follow
 
 ### V1.0.X

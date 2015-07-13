@@ -121,30 +121,22 @@
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
     NSUInteger index = [self.pages indexOfObject:viewController];
-    
     if ((index == NSNotFound) || (index == 0)) {
         return nil;
     }
-    
     return self.pages[--index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
     NSUInteger index = [self.pages indexOfObject:viewController];
-    
     if ((index == NSNotFound)||(index+1 >= [self.pages count])) {
         return nil;
     }
-    
     return self.pages[++index];
 }
 
-- (void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
-    if (!completed){
-        return;
-    }
-    
-    [self.pageControl setSelectedSegmentIndex:[self.pages indexOfObject:[viewController.viewControllers lastObject]] animated:YES];
+- (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
+    [self.pageControl setSelectedSegmentIndex:[self.pages indexOfObject:[pendingViewControllers lastObject]] animated:YES];
 }
 
 #pragma mark - Callback
