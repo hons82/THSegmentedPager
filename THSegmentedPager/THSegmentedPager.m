@@ -93,11 +93,7 @@
 
 - (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated {
     [UIView animateWithDuration:animated ? 0.25f : 0.f animations:^{
-        if (hidden) {
-            self.pageControl.alpha = 0.0f;
-        } else {
-            self.pageControl.alpha = 1.0f;
-        }
+        self.pageControl.alpha = hidden ? 0.0f : 1.0f;
     }];
     [self.pageControl setHidden:hidden];
     [self.view setNeedsLayout];
@@ -137,6 +133,12 @@
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers {
     [self.pageControl setSelectedSegmentIndex:[self.pages indexOfObject:[pendingViewControllers lastObject]] animated:YES];
+}
+
+- (void)pageViewController:(UIPageViewController *)viewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed {
+    if (!completed) {
+        [self.pageControl setSelectedSegmentIndex:[self.pages indexOfObject:[viewController.viewControllers lastObject]] animated:YES];
+    }
 }
 
 #pragma mark - Callback

@@ -10,12 +10,19 @@
 
 @interface SamplePagedViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *sampleLabel;
+
 @end
 
 @implementation SamplePagedViewController
 
-- (NSString *)viewControllerTitle
-{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.sampleLabel setText:self.viewControllerTitle];
+}
+
+- (NSString *)viewControllerTitle {
     return self.viewTitle ? self.viewTitle : self.title;
 }
 

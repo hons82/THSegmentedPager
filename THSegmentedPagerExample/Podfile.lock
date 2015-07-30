@@ -1,11 +1,13 @@
 PODS:
-  - Expecta (1.0.0)
+  - Expecta (1.0.2)
   - Expecta+Snapshots (1.3.4):
     - Expecta (~> 1.0)
     - FBSnapshotTestCase (~> 1.8)
   - FBSnapshotTestCase (1.8.1)
   - HMSegmentedControl (1.5.2)
-  - Specta (1.0.2)
+  - Specta (1.0.3)
+  - THSegmentedPager (1.1.1):
+    - HMSegmentedControl (~> 1.5.2)
 
 DEPENDENCIES:
   - Expecta
@@ -13,12 +15,18 @@ DEPENDENCIES:
   - FBSnapshotTestCase
   - HMSegmentedControl (~> 1.5.1)
   - Specta
+  - THSegmentedPager (from `../../THSegmentedPager`)
+
+EXTERNAL SOURCES:
+  THSegmentedPager:
+    :path: "../../THSegmentedPager"
 
 SPEC CHECKSUMS:
-  Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
+  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
   Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
   FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
-  Specta: 9cec98310dca411f7c7ffd6943552b501622abfe
+  Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
+  THSegmentedPager: 15c9b5f464e9158d5b10e4c33f1d7cb3d38d7650
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

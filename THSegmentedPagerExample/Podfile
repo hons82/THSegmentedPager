@@ -1,7 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
-pod 'HMSegmentedControl', '~> 1.5.1'
+pod 'HMSegmentedControl', '~> 1.5.2'
+pod 'THSegmentedPager', :path=> '../../THSegmentedPager'
 
 target 'THSegmentedPagerExampleTests', :exclusive => true do
   pod 'FBSnapshotTestCase'

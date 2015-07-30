@@ -23,7 +23,6 @@
 		99C8C822198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
 		99C8C82A198281240039193A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C828198281240039193A /* InfoPlist.strings */; };
 		99C8C836198281580039193A /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C835198281580039193A /* iPhone.storyboard */; };
-		99C8C839198285AD0039193A /* THSegmentedPager.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C838198285AD0039193A /* THSegmentedPager.m */; };
 		99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C84619829C650039193A /* SamplePagedViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -58,9 +57,6 @@
 		99C8C827198281240039193A /* THSegmentedPagerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THSegmentedPagerExampleTests-Info.plist"; sourceTree = "<group>"; };
 		99C8C829198281240039193A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		99C8C835198281580039193A /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		99C8C837198285AD0039193A /* THSegmentedPager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THSegmentedPager.h; path = ../THSegmentedPager/THSegmentedPager.h; sourceTree = SOURCE_ROOT; };
-		99C8C838198285AD0039193A /* THSegmentedPager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THSegmentedPager.m; path = ../THSegmentedPager/THSegmentedPager.m; sourceTree = SOURCE_ROOT; };
-		99C8C84419829C0B0039193A /* THSegmentedPageViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = THSegmentedPageViewControllerDelegate.h; path = ../THSegmentedPager/THSegmentedPageViewControllerDelegate.h; sourceTree = SOURCE_ROOT; };
 		99C8C84519829C650039193A /* SamplePagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePagedViewController.h; sourceTree = "<group>"; };
 		99C8C84619829C650039193A /* SamplePagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePagedViewController.m; sourceTree = "<group>"; };
 		B0378D4EB5754459AF84BA34 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,7 +155,6 @@
 				99C8C818198281240039193A /* Images.xcassets */,
 				99C8C80D198281240039193A /* Supporting Files */,
 				99C8C835198281580039193A /* iPhone.storyboard */,
-				99C8C83A198286860039193A /* THSegmentedPager */,
 			);
 			path = THSegmentedPagerExample;
 			sourceTree = "<group>";
@@ -192,17 +187,6 @@
 				99C8C828198281240039193A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		99C8C83A198286860039193A /* THSegmentedPager */ = {
-			isa = PBXGroup;
-			children = (
-				99C8C837198285AD0039193A /* THSegmentedPager.h */,
-				99C8C838198285AD0039193A /* THSegmentedPager.m */,
-				99C8C84419829C0B0039193A /* THSegmentedPageViewControllerDelegate.h */,
-			);
-			name = THSegmentedPager;
-			path = ../../THSegmentedPager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +353,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C8C839198285AD0039193A /* THSegmentedPager.m in Sources */,
 				99C8C817198281240039193A /* AppDelegate.m in Sources */,
 				99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */,
 				99C8C813198281240039193A /* main.m in Sources */,

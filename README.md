@@ -22,7 +22,7 @@ Install with [CocoaPods](http://cocoapods.org) by adding the following to your P
 
 ``` ruby
 platform :ios, '7.0'
-pod 'THSegmentedPager', '~> 1.1.1'
+pod 'THSegmentedPager', '~> 1.1.2'
 ```
 
 **Note**: We follow http://semver.org for versioning the public API.
