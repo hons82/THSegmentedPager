@@ -13,6 +13,7 @@
 @property (nonatomic,assign) CGFloat lastPosition;
 @property (nonatomic,assign) NSUInteger currentIndex;
 @property (nonatomic,assign) NSUInteger nextIndex;
+@property (nonatomic,assign) BOOL userDraggingStartedTransitionInProgress;
 @end
 
 @implementation THSegmentedPager
@@ -161,6 +162,9 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    if (scrollView.isTracking || scrollView.isDecelerating) {
+        self.userDraggingStartedTransitionInProgress = YES;
+    }
     /* The iOS page view controller API is broken.  It lies to us and tells us that the currently presented view hasn't changed, but under the hood, it starts giving the contentOffset relative to the next view.  The only way to detect this brain damage is to notice that the content offset is discontinuous, and pretend that the page changed.
      */
     if (self.nextIndex > self.currentIndex) {
@@ -210,16 +214,46 @@
     }
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.userDraggingStartedTransitionInProgress = NO;
+}
+
 #pragma mark - Callback
 
 - (void)pageControlValueChanged:(id)sender {
-    // Update NextIndex
-    self.nextIndex = [self.pageControl selectedSegmentIndex];
-    UIPageViewControllerNavigationDirection direction = self.nextIndex > [self.pages indexOfObject:[self.pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
-    [self.pageViewController setViewControllers:@[[self selectedController]]
-                                      direction:direction
-                                       animated:YES
-                                     completion:NULL];
+    
+    // when user dragging initiated transition is still in progress, prevent pageControl from starting simultaneous transitions to avoid assertion failure and crash
+    
+    // failure type 1: Assertion failure in -[UIPageViewController queuingScrollView:didEndManualScroll:toRevealView:direction:animated:didFinish:didComplete:], /SourceCache/UIKit_Sim/UIKit-2935.137/UIPageViewController.m:1866
+    // Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'No view controller managing visible view
+    
+    // failure type 2: Assertion failure in -[_UIQueuingScrollView _enqueueCompletionState:], /SourceCache/UIKit_Sim/UIKit-2935.137/_UIQueuingScrollView.m:499
+    // Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Duplicate states in queue'
+    
+    if (!self.userDraggingStartedTransitionInProgress) {
+        
+        // Update NextIndex
+        self.nextIndex = [self.pageControl selectedSegmentIndex];
+        UIPageViewControllerNavigationDirection direction = self.nextIndex > [self.pages indexOfObject:[self.pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
+        
+        __weak THSegmentedPager *blocksafeSelf = self;
+        [self.pageViewController setViewControllers:@[[self selectedController]]
+                                          direction:direction
+                                           animated:YES
+                                         completion:^(BOOL finished) {
+                                             // ref: http://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style
+                                             // workaround for UIPageViewController's bug to avoid transition to wrong page
+                                             // (ex: after switching from p1 to p3 using pageControl, you can only swipe back from p3 to p1 instead of p2)
+                                             dispatch_async(dispatch_get_main_queue(), ^{
+                                                 [blocksafeSelf.pageViewController setViewControllers:@[[blocksafeSelf selectedController]]
+                                                                                            direction:direction
+                                                                                             animated:NO
+                                                                                           completion:nil];
+                                             });
+                                         }];
+    } else {
+        [self.pageControl setSelectedSegmentIndex:self.currentIndex animated:NO];
+    }
 }
 
 @end
