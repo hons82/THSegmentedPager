@@ -235,10 +235,22 @@
         // Update NextIndex
         self.nextIndex = [self.pageControl selectedSegmentIndex];
         UIPageViewControllerNavigationDirection direction = self.nextIndex > [self.pages indexOfObject:[self.pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
+        
+        __weak THSegmentedPager *blocksafeSelf = self;
         [self.pageViewController setViewControllers:@[[self selectedController]]
                                           direction:direction
                                            animated:YES
-                                         completion:NULL];
+                                         completion:^(BOOL finished) {
+                                             // ref: http://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style
+                                             // workaround for UIPageViewController's bug to avoid transition to wrong page
+                                             // (ex: after switching from p1 to p3 using pageControl, you can only swipe back from p3 to p1 instead of p2)
+                                             dispatch_async(dispatch_get_main_queue(), ^{
+                                                 [blocksafeSelf.pageViewController setViewControllers:@[[blocksafeSelf selectedController]]
+                                                                                            direction:direction
+                                                                                             animated:NO
+                                                                                           completion:nil];
+                                             });
+                                         }];
     } else {
         [self.pageControl setSelectedSegmentIndex:self.currentIndex animated:NO];
     }
