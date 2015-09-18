@@ -22,7 +22,7 @@ Install with [CocoaPods](http://cocoapods.org) by adding the following to your P
 
 ``` ruby
 platform :ios, '7.0'
-pod 'THSegmentedPager', '~> 1.1.2'
+pod 'THSegmentedPager', '~> 1.1.3'
 ```
 
 **Note**: We follow http://semver.org for versioning the public API.
@@ -43,6 +43,7 @@ This will cause some errors with imports not found correctly which you'll need t
 
 ### V1.1.X
 
+- [Pull Request](https://github.com/hons82/THSegmentedPager/pull/19) thx to [JaxGit](https://github.com/JaxGit)
 - Fixed issue [#12](https://github.com/hons82/THSegmentedPager/issues/12)
 - With this version we switch back to the original [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl) and as he's dropping support for iOS6 we'll need to follow
 
@@ -79,12 +80,12 @@ This is a sample initialization taken from the ExampleProject.
 
 ###Contributors
 
-- [Victor Ilyukevich](https://github.com/yas375)
--- Added automated Tests
--- Added Travis CI and Coverall.io support
+[Victor Ilyukevich](https://github.com/yas375)
+- Added automated Tests
+- Added Travis CI and Coverall.io support
+
+[JaxGit](https://github.com/JaxGit)
 
 # License
 
 Source code of this project is available under the standard MIT license. Please see [the license file](LICENSE.md).
-
-

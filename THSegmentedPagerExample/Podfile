@@ -5,7 +5,7 @@ pod 'HMSegmentedControl', '~> 1.5.2'
 pod 'THSegmentedPager', :path=> '../../THSegmentedPager'
 
 target 'THSegmentedPagerExampleTests', :exclusive => true do
-  pod 'FBSnapshotTestCase'
+  pod 'FBSnapshotTestCase/Core'
   pod 'Expecta+Snapshots'
   pod 'Specta'
   pod 'Expecta'

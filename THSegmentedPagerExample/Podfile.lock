@@ -1,9 +1,9 @@
 PODS:
-  - Expecta (1.0.2)
-  - Expecta+Snapshots (1.3.4):
+  - Expecta (1.0.3)
+  - Expecta+Snapshots (2.0.0):
     - Expecta (~> 1.0)
-    - FBSnapshotTestCase (~> 1.8)
-  - FBSnapshotTestCase (1.8.1)
+    - FBSnapshotTestCase/Core (~> 2.0.3)
+  - FBSnapshotTestCase/Core (2.0.4)
   - HMSegmentedControl (1.5.2)
   - Specta (1.0.3)
   - THSegmentedPager (1.1.2):
@@ -12,7 +12,7 @@ PODS:
 DEPENDENCIES:
   - Expecta
   - Expecta+Snapshots
-  - FBSnapshotTestCase
+  - FBSnapshotTestCase/Core
   - HMSegmentedControl (~> 1.5.2)
   - Specta
   - THSegmentedPager (from `../../THSegmentedPager`)
@@ -22,9 +22,9 @@ EXTERNAL SOURCES:
     :path: "../../THSegmentedPager"
 
 SPEC CHECKSUMS:
-  Expecta: 54e8a3530add08f4f0208c111355eda7cde74a53
-  Expecta+Snapshots: ca15bfb57e7a0f78f86c7699c2c54ffacfa4ad2a
-  FBSnapshotTestCase: 3dc3899168747a0319c5278f5b3445c13a6532dd
+  Expecta: 9d1bff6c8b0eeee73a166a2ee898892478927a15
+  Expecta+Snapshots: 29b38dd695bc72a0ed2bea833937d78df41943ba
+  FBSnapshotTestCase: d94cf34841c9e77390e29009e8e2713479d48753
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   Specta: cf3e4188cf35375c3ee2cd03f8db8f1f4ef98234
   THSegmentedPager: 27eec59b0487a8c62adc7f2f903e3ebeaee66047
