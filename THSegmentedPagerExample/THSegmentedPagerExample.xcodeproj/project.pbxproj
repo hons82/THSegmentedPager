@@ -11,6 +11,8 @@
 		502EEB741AE2DBFF000CFA05 /* THSegmentedPagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */; };
 		502EEB771AE2DCBD000CFA05 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */; };
 		6A1FCE59DEC24EB61262FDDC /* libPods-THSegmentedPagerExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */; };
+		9918A27A1BC6AA0C00A15A77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C818198281240039193A /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		9918A27C1BC6AA9600A15A77 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9918A27B1BC6AA9600A15A77 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		99C8C807198281240039193A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C806198281240039193A /* Foundation.framework */; };
 		99C8C809198281240039193A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C808198281240039193A /* CoreGraphics.framework */; };
 		99C8C80B198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
@@ -41,6 +43,7 @@
 		502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPagerTests.m; sourceTree = "<group>"; };
 		502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THSegmentedPagerExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9918A27B1BC6AA9600A15A77 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		99C8C803198281240039193A /* THSegmentedPagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THSegmentedPagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C8C806198281240039193A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99C8C808198281240039193A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -155,6 +158,7 @@
 				99C8C818198281240039193A /* Images.xcassets */,
 				99C8C80D198281240039193A /* Supporting Files */,
 				99C8C835198281580039193A /* iPhone.storyboard */,
+				9918A27B1BC6AA9600A15A77 /* Launch Screen.storyboard */,
 			);
 			path = THSegmentedPagerExample;
 			sourceTree = "<group>";
@@ -270,6 +274,7 @@
 			files = (
 				99C8C811198281240039193A /* InfoPlist.strings in Resources */,
 				99C8C836198281580039193A /* iPhone.storyboard in Resources */,
+				9918A27C1BC6AA9600A15A77 /* Launch Screen.storyboard in Resources */,
 				99C8C819198281240039193A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9918A27A1BC6AA0C00A15A77 /* Images.xcassets in Resources */,
 				99C8C82A198281240039193A /* InfoPlist.strings in Resources */,
 				502EEB771AE2DCBD000CFA05 /* Storyboard.storyboard in Resources */,
 			);
@@ -477,7 +483,7 @@
 			baseConfigurationReference = E9CACEA33C0AB51FDF71D7B5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "THSegmentedPagerExample/THSegmentedPagerExample-Prefix.pch";
@@ -493,7 +499,7 @@
 			baseConfigurationReference = B86019CAE24EC80D2397F99D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "THSegmentedPagerExample/THSegmentedPagerExample-Prefix.pch";
