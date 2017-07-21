@@ -51,6 +51,8 @@
     self.pageControl.verticalDividerEnabled = YES;
     self.pageControl.verticalDividerColor = [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1];
     
+    self.needPagerAnimateWhenSegmentSelectionChanged = YES;
+    
     // Obtain the ScrollViewDelegate
     self.shouldBounce = YES;
     for (UIView *view in self.pageViewController.view.subviews ) {
@@ -239,7 +241,7 @@
         __weak THSegmentedPager *blocksafeSelf = self;
         [self.pageViewController setViewControllers:@[[self selectedController]]
                                           direction:direction
-                                           animated:YES
+                                           animated:self.needPagerAnimateWhenSegmentSelectionChanged
                                          completion:^(BOOL finished) {
                                              // ref: http://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style
                                              // workaround for UIPageViewController's bug to avoid transition to wrong page

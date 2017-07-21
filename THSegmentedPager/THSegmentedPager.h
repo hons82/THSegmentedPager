@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet HMSegmentedControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIView *contentContainer;
 
+@property (assign, nonatomic) BOOL needPagerAnimateWhenSegmentSelectionChanged;
+
 @property (strong, nonatomic)NSMutableArray *pages;
 @property (assign, nonatomic, getter=isShouldBounce)BOOL shouldBounce;
 /*! Instead of setting the pages manually you can give to the controller an array of identifiers which will be loaded from the storyboard at runtime
