@@ -8,6 +8,7 @@
 
 #import "THSegmentedPager.h"
 #import "THSegmentedPageViewControllerDelegate.h"
+#import <objc/runtime.h>
 
 @interface THSegmentedPager () <UIScrollViewDelegate>
 @property (nonatomic,assign) CGFloat lastPosition;
@@ -98,6 +99,7 @@
         for (NSString *identifier in pageIdentifiers) {
             UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:identifier];
             if (viewController) {
+                viewController.segmentedPager = self;
                 [self.pri_pages addObject:viewController];
             }
         }
@@ -134,6 +136,7 @@
     } else if (!hidden && self.pri_segmentControl.hidden) {
         self.pri_segmentControl.hidden = NO;
         [UIView animateWithDuration:duration animations:^{
+#warning - 需要在动画结束以后再改变container的高度，否则会在动画的过程中导致底部出现一部分的空白
             CGRect remainder;
             CGRect slice;
             CGRectDivide(self.pri_contentContainer.frame, &slice, &remainder, CGRectGetHeight(self.pri_segmentControl.frame), CGRectMinYEdge);
@@ -358,11 +361,44 @@
     return self.pri_pages;
 }
 
-- (void)setPages:(NSArray *)pages
+- (void)setPages:(NSArray<UIViewController *> *)pages
 {
     if (pages) {
-        [self.pri_pages removeAllObjects];
-        [self.pri_pages addObjectsFromArray:pages];
+        self.pri_pages = [pages mutableCopy];
+        for (UIViewController *viewController in pages) {
+            viewController.segmentedPager = self;
+        }
+    }
+}
+
+- (void)setPageControlHeight:(CGFloat)pageControlHeight
+{
+    [self setPageControlHeight:pageControlHeight animated:NO];
+}
+
+- (void)setPageControlHeight:(CGFloat)pageControlHeight animated:(BOOL)animated
+{
+    if (pageControlHeight > 0) {
+        if (self.pageControl.hidden) {
+            self.pageControl.frame = (CGRect){self.pageControl.frame.origin, (CGSize){self.pageControl.frame.size.width, pageControlHeight}};
+        } else {
+            NSTimeInterval duration = animated ? 0.25f : 0.0f;
+            [UIView animateWithDuration:duration animations:^{
+                
+                CGRect pageControlFrame = self.pageControl.frame;
+                CGRect contentContainerFrame = self.contentContainer.frame;
+                
+                CGFloat increaseHeight = pageControlHeight - CGRectGetHeight(pageControlFrame);
+                
+                pageControlFrame.size.height = pageControlHeight;
+                
+                contentContainerFrame.origin.y = CGRectGetMaxY(pageControlFrame);
+                contentContainerFrame.size.height -= increaseHeight;
+                
+                self.pageControl.frame = pageControlFrame;
+                self.contentContainer.frame = contentContainerFrame;
+            }];
+        }
     }
 }
 
@@ -371,3 +407,56 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+@interface _THWeakContainer : NSObject
+
+@property (weak, nonatomic) THSegmentedPager *segmentedPager;
+
+@end
+
+@implementation _THWeakContainer
+
+@end
+
+@interface UIViewController (_THSegmentedPager)
+
+@property (retain, nonatomic) _THWeakContainer *weakContainer;
+
+@end
+
+@implementation UIViewController (THSegmentedPager)
+
+- (void)setSegmentedPager:(THSegmentedPager *)segmentedPager {
+    if ([segmentedPager isKindOfClass:[THSegmentedPager class]]) {
+        self.weakContainer.segmentedPager = segmentedPager;
+    }
+}
+
+- (THSegmentedPager *)segmentedPager {
+    return self.weakContainer.segmentedPager;
+}
+
+- (void)setWeakContainer:(_THWeakContainer *)weakContainer {
+    objc_setAssociatedObject(self, @selector(weakContainer), weakContainer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (_THWeakContainer *)weakContainer {
+    _THWeakContainer *weakContainer = objc_getAssociatedObject(self, @selector(weakContainer));
+    if (!weakContainer) {
+        weakContainer = [[_THWeakContainer alloc] init];
+        self.weakContainer = weakContainer;
+    }
+    return weakContainer;
+}
+
+@end
+
+

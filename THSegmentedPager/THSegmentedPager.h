@@ -17,18 +17,20 @@
 
 @property (assign, nonatomic) BOOL needPagerAnimateWhenSegmentSelectionChanged;
 
-@property (strong, nonatomic) NSArray *pages;
+@property (strong, nonatomic) NSArray <UIViewController *> *pages;
 @property (assign, nonatomic) BOOL shouldBounce;
 
 /*! Instead of setting the pages manually you can give to the controller an array of identifiers which will be loaded from the storyboard at runtime
  * \param pageIdentifiers Array of identifiers to load
  */
-- (void)setupPagesFromStoryboardWithIdentifier:(NSString *)storybardIdentifier pageIdentifiers:(NSArray *)pageIdentifiers;
-- (void)setupPagesFromStoryboard:(UIStoryboard *)storyboard pageIdentifiers:(NSArray *)pageIdentifiers;
-- (void)setupPagesFromStoryboardWithPageIdentifiers:(NSArray *)pageIdentifiers;
+- (void)setupPagesFromStoryboardWithIdentifier:(NSString *)storybardIdentifier pageIdentifiers:(NSArray <NSString *> *)pageIdentifiers;
+- (void)setupPagesFromStoryboard:(UIStoryboard *)storyboard pageIdentifiers:(NSArray <NSString *> *)pageIdentifiers;
+- (void)setupPagesFromStoryboardWithPageIdentifiers:(NSArray <NSString *> *)pageIdentifiers;
 
 - (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated;
 - (void)setSelectedPageIndex:(NSUInteger)index animated:(BOOL)animated;
+- (void)setPageControlHeight:(CGFloat)pageControlHeight;
+- (void)setPageControlHeight:(CGFloat)pageControlHeight animated:(BOOL)animated;
 
 
 /*! Get the selected viewcontroller
@@ -39,5 +41,11 @@
 /*! The control will ask from every viewcontroller an updated title string
  */
 - (void)updateTitleLabels;
+
+@end
+
+@interface UIViewController (THSegmentedPager)
+
+@property (weak, nonatomic) THSegmentedPager *segmentedPager;
 
 @end

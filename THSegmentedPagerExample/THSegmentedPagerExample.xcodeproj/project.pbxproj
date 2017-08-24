@@ -152,8 +152,8 @@
 				TargetAttributes = {
 					1C1AEF831F4EA624005C8FB8 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = NFE8L9VTV6;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = EHNB49T236;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -201,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		99318926B5411CB48DAF2087 /* [CP] Embed Pods Frameworks */ = {
@@ -369,13 +369,14 @@
 			baseConfigurationReference = FE52F4410F6DFBC3E444EFA1 /* Pods-ThSegmentedPagerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NFE8L9VTV6;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = EHNB49T236;
 				INFOPLIST_FILE = ThSegmentedPagerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jyhu.ThSegmentedPagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4586ff62-821a-4e40-99a7-7682f668d1ca";
-				PROVISIONING_PROFILE_SPECIFIER = "hujinyou-mbp-dev-all-170329";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -384,7 +385,8 @@
 			baseConfigurationReference = C8918BF900C98EEF7131C90D /* Pods-ThSegmentedPagerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = EHNB49T236;
 				INFOPLIST_FILE = ThSegmentedPagerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jyhu.ThSegmentedPagerExample;

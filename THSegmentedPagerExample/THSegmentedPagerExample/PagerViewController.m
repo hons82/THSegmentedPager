@@ -28,13 +28,6 @@
     BaseTableViewController *b4 = [[BaseTableViewController alloc] initWithTitle:@"B4"];
     
     [self setPages:@[b1, b2, b3, b4]];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self setPageControlHidden:YES animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self setPageControlHidden:NO animated:YES];
-        });
-    });
 }
 
 - (void)didReceiveMemoryWarning {
