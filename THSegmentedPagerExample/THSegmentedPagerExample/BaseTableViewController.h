@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  BaseTableViewController.h
 //  ThSegmentedPagerExample
 //
 //  Created by 胡金友 on 2017/8/24.
@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface BaseTableViewController : UITableViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+- (instancetype)initWithTitle:(NSString *)title;
 
 @end
-

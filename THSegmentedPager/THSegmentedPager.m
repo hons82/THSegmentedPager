@@ -14,48 +14,53 @@
 @property (nonatomic,assign) NSUInteger currentIndex;
 @property (nonatomic,assign) NSUInteger nextIndex;
 @property (nonatomic,assign) BOOL userDraggingStartedTransitionInProgress;
+
+@property (strong, nonatomic) HMSegmentedControl *pri_segmentControl;
+@property (strong, nonatomic) UIPageViewController *pri_pageViewController;
+@property (strong, nonatomic) UIView *pri_contentContainer;
+@property (strong, nonatomic) NSMutableArray *pri_pages;
+
 @end
 
 @implementation THSegmentedPager
 
-@synthesize pageViewController = _pageViewController;
-@synthesize pages = _pages;
-@synthesize shouldBounce = _shouldBounce;
+@synthesize pri_pages = _pri_pages;
 
-- (NSMutableArray *)pages {
-    if (!_pages)_pages = [NSMutableArray new];
-    return _pages;
+- (instancetype)init {
+    if (self = [super init]) {
+        self.needPagerAnimateWhenSegmentSelectionChanged = NO;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.needPagerAnimateWhenSegmentSelectionChanged = NO;
+    }
+    return self;
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        self.needPagerAnimateWhenSegmentSelectionChanged = NO;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Init PageViewController
-    self.pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.contentContainer.frame.size.width, self.contentContainer.frame.size.height);
-    [self.pageViewController setDataSource:self];
-    [self.pageViewController setDelegate:self];
-    [self.pageViewController.view setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
-    [self addChildViewController:self.pageViewController];
-    [self.contentContainer addSubview:self.pageViewController.view];
+
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.pageControl addTarget:self
-                         action:@selector(pageControlValueChanged:)
-               forControlEvents:UIControlEventValueChanged];
-    
-    self.pageControl.backgroundColor = [UIColor colorWithRed:69/255.0 green:69/255.0 blue:69/255.0 alpha:1];
-    self.pageControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1]};
-    self.pageControl.selectionIndicatorColor = [UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1];
-    self.pageControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    self.pageControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-    self.pageControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
-    self.pageControl.verticalDividerEnabled = YES;
-    self.pageControl.verticalDividerColor = [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1];
-    
-    self.needPagerAnimateWhenSegmentSelectionChanged = YES;
+    [self addChildViewController:self.pri_pageViewController];
+    [self.pri_contentContainer addSubview:self.pri_pageViewController.view];
+    [self.view addSubview:self.pri_contentContainer];
+
+    [self.view addSubview:self.pri_segmentControl];
     
     // Obtain the ScrollViewDelegate
     self.shouldBounce = YES;
-    for (UIView *view in self.pageViewController.view.subviews ) {
+    for (UIView *view in self.pri_pageViewController.view.subviews ) {
         if ([view isKindOfClass:[UIScrollView class]]) {
             ((UIScrollView *)view).delegate = self;
         }
@@ -64,8 +69,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if ([self.pages count]>0) {
-        [self setSelectedPageIndex:[self.pageControl selectedSegmentIndex] animated:animated];
+    if ([self.pri_pages count]>0) {
+        [self setSelectedPageIndex:[self.pri_segmentControl selectedSegmentIndex] animated:animated];
     }
     [self updateTitleLabels];
 }
@@ -78,24 +83,34 @@
 
 #pragma mark - Setup
 
-- (void)setupPagesFromStoryboardWithIdentifiers:(NSArray *)identifiers {
-    if (self.storyboard) {
-        for (NSString *identifier in identifiers) {
-            UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+- (void)setupPagesFromStoryboardWithPageIdentifiers:(NSArray *)pageIdentifiers {
+    [self setupPagesFromStoryboard:self.storyboard pageIdentifiers:pageIdentifiers];
+}
+
+- (void)setupPagesFromStoryboardWithIdentifier:(NSString *)storybardIdentifier pageIdentifiers:(NSArray *)pageIdentifiers {
+    if (storybardIdentifier) {
+        [self setupPagesFromStoryboard:[UIStoryboard storyboardWithName:storybardIdentifier bundle:nil] pageIdentifiers:pageIdentifiers];
+    }
+}
+
+- (void)setupPagesFromStoryboard:(UIStoryboard *)storyboard pageIdentifiers:(NSArray *)pageIdentifiers {
+    if (storyboard) {
+        for (NSString *identifier in pageIdentifiers) {
+            UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:identifier];
             if (viewController) {
-                [self.pages addObject:viewController];
+                [self.pri_pages addObject:viewController];
             }
         }
     }
 }
 
 - (void)updateTitleLabels {
-    [self.pageControl setSectionTitles:[self titleLabels]];
+    [self.pri_segmentControl setSectionTitles:[self titleLabels]];
 }
 
 - (NSArray *)titleLabels {
     NSMutableArray *titles = [NSMutableArray new];
-    for (UIViewController *vc in self.pages) {
+    for (UIViewController *vc in self.pri_pages) {
         if ([vc conformsToProtocol:@protocol(THSegmentedPageViewControllerDelegate)] && [vc respondsToSelector:@selector(viewControllerTitle)] && [((UIViewController<THSegmentedPageViewControllerDelegate> *)vc) viewControllerTitle]) {
             [titles addObject:[((UIViewController<THSegmentedPageViewControllerDelegate> *)vc) viewControllerTitle]];
         } else {
@@ -106,21 +121,32 @@
 }
 
 - (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated {
-    [UIView animateWithDuration:animated ? 0.25f : 0.f animations:^{
-        self.pageControl.alpha = hidden ? 0.0f : 1.0f;
-    }];
-    [self.pageControl setHidden:hidden];
-    [self.view setNeedsLayout];
-}
-
-- (UIViewController *)selectedController {
-    return self.pages[[self.pageControl selectedSegmentIndex]];
+    
+    NSTimeInterval duration = (animated ? 0.25f : 0.0f);
+    
+    if (hidden && !self.pri_segmentControl.hidden) {
+        [UIView animateWithDuration:duration animations:^{
+            self.pri_segmentControl.alpha = 0.0f;
+            self.pri_contentContainer.frame = CGRectUnion(self.pri_contentContainer.frame, self.pri_segmentControl.frame);
+        } completion:^(BOOL finished) {
+            self.pri_segmentControl.hidden = YES;
+        }];
+    } else if (!hidden && self.pri_segmentControl.hidden) {
+        self.pri_segmentControl.hidden = NO;
+        [UIView animateWithDuration:duration animations:^{
+            CGRect remainder;
+            CGRect slice;
+            CGRectDivide(self.pri_contentContainer.frame, &slice, &remainder, CGRectGetHeight(self.pri_segmentControl.frame), CGRectMinYEdge);
+            self.pri_contentContainer.frame = remainder;
+            self.pri_segmentControl.alpha = 1.0f;
+        }];
+    }
 }
 
 - (void)setSelectedPageIndex:(NSUInteger)index animated:(BOOL)animated {
-    if (index < [self.pages count]) {
-        [self.pageControl setSelectedSegmentIndex:index animated:YES];
-        [self.pageViewController setViewControllers:@[self.pages[index]]
+    if (index < [self.pri_pages count]) {
+        [self.pri_segmentControl setSelectedSegmentIndex:index animated:YES];
+        [self.pri_pageViewController setViewControllers:@[self.pri_pages[index]]
                                           direction:UIPageViewControllerNavigationDirectionForward
                                            animated:animated
                                          completion:NULL];
@@ -130,31 +156,31 @@
 #pragma mark - UIPageViewControllerDataSource
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSUInteger index = [self.pages indexOfObject:viewController];
+    NSUInteger index = [self.pri_pages indexOfObject:viewController];
     if ((index == NSNotFound) || (index == 0)) {
         return nil;
     }
-    return self.pages[--index];
+    return self.pri_pages[--index];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSUInteger index = [self.pages indexOfObject:viewController];
-    if ((index == NSNotFound)||(index+1 >= [self.pages count])) {
+    NSUInteger index = [self.pri_pages indexOfObject:viewController];
+    if ((index == NSNotFound)||(index+1 >= [self.pri_pages count])) {
         return nil;
     }
-    return self.pages[++index];
+    return self.pri_pages[++index];
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers{
-    self.nextIndex = [self.pages indexOfObject:[pendingViewControllers firstObject]];
+    self.nextIndex = [self.pri_pages indexOfObject:[pendingViewControllers firstObject]];
 }
 
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed{
     if(completed){
         // DIRTY FIX
-        if (self.nextIndex != [self.pages indexOfObject:[previousViewControllers firstObject]]) {
-            self.currentIndex = [self.pages indexOfObject:[pageViewController.viewControllers objectAtIndex:0]];
-            [self.pageControl setSelectedSegmentIndex:self.currentIndex animated:YES];
+        if (self.nextIndex != [self.pri_pages indexOfObject:[previousViewControllers firstObject]]) {
+            self.currentIndex = [self.pri_pages indexOfObject:[pageViewController.viewControllers objectAtIndex:0]];
+            [self.pri_segmentControl setSelectedSegmentIndex:self.currentIndex animated:YES];
         }
     }
     self.nextIndex = self.currentIndex;
@@ -173,19 +199,19 @@
         /* Scrolling forwards */
         if (scrollView.contentOffset.x < (self.lastPosition - (.9 * scrollView.bounds.size.width))) {
             self.currentIndex = self.nextIndex;
-            [self.pageControl setSelectedSegmentIndex:self.currentIndex];
+            [self.pri_segmentControl setSelectedSegmentIndex:self.currentIndex];
         }
     } else {
         /* Scrolling backwards */
         if (scrollView.contentOffset.x > (self.lastPosition + (.9 * scrollView.bounds.size.width))) {
             self.currentIndex = self.nextIndex;
-            [self.pageControl setSelectedSegmentIndex:self.currentIndex];
+            [self.pri_segmentControl setSelectedSegmentIndex:self.currentIndex];
         }
     }
     
     /* Need to calculate max/min offset for *every* page, not just the first and last. */
     CGFloat minXOffset = scrollView.bounds.size.width - (self.currentIndex * scrollView.bounds.size.width);
-    CGFloat maxXOffset = (([self.pages count] - self.currentIndex) * scrollView.bounds.size.width);
+    CGFloat maxXOffset = (([self.pri_pages count] - self.currentIndex) * scrollView.bounds.size.width);
     
     if (!self.shouldBounce) {
         CGRect scrollBounds = scrollView.bounds;
@@ -205,7 +231,7 @@
 {
     /* Need to calculate max/min offset for *every* page, not just the first and last. */
     CGFloat minXOffset = scrollView.bounds.size.width - (self.currentIndex * scrollView.bounds.size.width);
-    CGFloat maxXOffset = (([self.pages count] - self.currentIndex) * scrollView.bounds.size.width);
+    CGFloat maxXOffset = (([self.pri_pages count] - self.currentIndex) * scrollView.bounds.size.width);
     
     if (!self.shouldBounce) {
         if (scrollView.contentOffset.x <= minXOffset) {
@@ -235,27 +261,113 @@
     if (!self.userDraggingStartedTransitionInProgress) {
         
         // Update NextIndex
-        self.nextIndex = [self.pageControl selectedSegmentIndex];
-        UIPageViewControllerNavigationDirection direction = self.nextIndex > [self.pages indexOfObject:[self.pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
+        self.nextIndex = [self.pri_segmentControl selectedSegmentIndex];
+        UIPageViewControllerNavigationDirection direction = self.nextIndex > [self.pri_pages indexOfObject:[self.pri_pageViewController.viewControllers lastObject]] ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
+        
+        if (!self.needPagerAnimateWhenSegmentSelectionChanged && self.pri_segmentControl.selectedSegmentIndex < self.pri_pages.count) {
+            self.currentIndex = [self.pri_segmentControl selectedSegmentIndex];
+        }
         
         __weak THSegmentedPager *blocksafeSelf = self;
-        [self.pageViewController setViewControllers:@[[self selectedController]]
-                                          direction:direction
-                                           animated:self.needPagerAnimateWhenSegmentSelectionChanged
-                                         completion:^(BOOL finished) {
-                                             // ref: http://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style
-                                             // workaround for UIPageViewController's bug to avoid transition to wrong page
-                                             // (ex: after switching from p1 to p3 using pageControl, you can only swipe back from p3 to p1 instead of p2)
-                                             dispatch_async(dispatch_get_main_queue(), ^{
-                                                 [blocksafeSelf.pageViewController setViewControllers:@[[blocksafeSelf selectedController]]
-                                                                                            direction:direction
-                                                                                             animated:NO
-                                                                                           completion:nil];
-                                             });
-                                         }];
+        void (^completionBlock)(BOOL finished) = ^(BOOL finished) {
+            // ref: http://stackoverflow.com/questions/12939280/uipageviewcontroller-navigates-to-wrong-page-with-scroll-transition-style
+            // workaround for UIPageViewController's bug to avoid transition to wrong page
+            // (ex: after switching from p1 to p3 using pageControl, you can only swipe back from p3 to p1 instead of p2)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [blocksafeSelf.pri_pageViewController setViewControllers:@[[blocksafeSelf selectedController]] direction:direction animated:NO completion:nil];
+            });
+        };
+        
+        [self.pri_pageViewController setViewControllers:@[[self selectedController]] direction:direction
+                                           animated:self.needPagerAnimateWhenSegmentSelectionChanged completion:completionBlock];
     } else {
-        [self.pageControl setSelectedSegmentIndex:self.currentIndex animated:NO];
+        [self.pri_segmentControl setSelectedSegmentIndex:self.currentIndex animated:NO];
     }
+}
+
+#pragma mark - getter
+
+- (UIView *)pri_contentContainer
+{
+    if (!_pri_contentContainer) {
+        _pri_contentContainer = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pri_segmentControl.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetMaxY(self.pri_segmentControl.frame))];
+        _pri_contentContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _pri_contentContainer.backgroundColor = [UIColor clearColor];
+    }
+    
+    return _pri_contentContainer;
+}
+
+- (UIPageViewController *)pri_pageViewController
+{
+    if (!_pri_pageViewController) {
+        _pri_pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        _pri_pageViewController.view.frame = self.pri_contentContainer.bounds;
+        [_pri_pageViewController setDataSource:self];
+        [_pri_pageViewController setDelegate:self];
+        [_pri_pageViewController.view setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
+    }
+    
+    return _pri_pageViewController;
+}
+
+- (HMSegmentedControl *)pri_segmentControl
+{
+    if (!_pri_segmentControl) {
+        _pri_segmentControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 40)];
+        _pri_segmentControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _pri_segmentControl.backgroundColor = [UIColor colorWithRed:69/255.0 green:69/255.0 blue:69/255.0 alpha:1];
+        _pri_segmentControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1]};
+        _pri_segmentControl.selectionIndicatorColor = [UIColor colorWithRed:242/255.0 green:121/255.0 blue:53/255.0 alpha:1];
+        _pri_segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+        _pri_segmentControl.selectedTitleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+        _pri_segmentControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+        _pri_segmentControl.verticalDividerEnabled = YES;
+        _pri_segmentControl.verticalDividerColor = [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1];
+        
+        [_pri_segmentControl addTarget:self action:@selector(pageControlValueChanged:) forControlEvents:UIControlEventValueChanged];
+    }
+    return _pri_segmentControl;
+}
+
+- (HMSegmentedControl *)pageControl
+{
+    return self.pri_segmentControl;
+}
+
+- (UIPageViewController *)pageViewController
+{
+    return self.pri_pageViewController;
+}
+
+- (UIView *)contentContainer
+{
+    return self.pri_contentContainer;
+}
+
+- (NSMutableArray *)pri_pages
+{
+    if (!_pri_pages) {
+        _pri_pages = [[NSMutableArray alloc] init];
+    }
+    return _pri_pages;
+}
+
+- (NSArray *)pages
+{
+    return self.pri_pages;
+}
+
+- (void)setPages:(NSArray *)pages
+{
+    if (pages) {
+        [self.pri_pages removeAllObjects];
+        [self.pri_pages addObjectsFromArray:pages];
+    }
+}
+
+- (UIViewController *)selectedController {
+    return self.pri_pages[[self.pri_segmentControl selectedSegmentIndex]];
 }
 
 @end

@@ -7,406 +7,277 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CCB8815A52E480C87E30210 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0378D4EB5754459AF84BA34 /* libPods.a */; };
-		502EEB741AE2DBFF000CFA05 /* THSegmentedPagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */; };
-		502EEB771AE2DCBD000CFA05 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */; };
-		6A1FCE59DEC24EB61262FDDC /* libPods-THSegmentedPagerExampleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */; };
-		9918A27A1BC6AA0C00A15A77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C818198281240039193A /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
-		9918A27C1BC6AA9600A15A77 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9918A27B1BC6AA9600A15A77 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		99C8C807198281240039193A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C806198281240039193A /* Foundation.framework */; };
-		99C8C809198281240039193A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C808198281240039193A /* CoreGraphics.framework */; };
-		99C8C80B198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
-		99C8C811198281240039193A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C80F198281240039193A /* InfoPlist.strings */; };
-		99C8C813198281240039193A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C812198281240039193A /* main.m */; };
-		99C8C817198281240039193A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C816198281240039193A /* AppDelegate.m */; };
-		99C8C819198281240039193A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C818198281240039193A /* Images.xcassets */; };
-		99C8C820198281240039193A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C81F198281240039193A /* XCTest.framework */; };
-		99C8C821198281240039193A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C806198281240039193A /* Foundation.framework */; };
-		99C8C822198281240039193A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99C8C80A198281240039193A /* UIKit.framework */; };
-		99C8C82A198281240039193A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C828198281240039193A /* InfoPlist.strings */; };
-		99C8C836198281580039193A /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C8C835198281580039193A /* iPhone.storyboard */; };
-		99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C8C84619829C650039193A /* SamplePagedViewController.m */; };
+		1C1AEF891F4EA624005C8FB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1AEF881F4EA624005C8FB8 /* main.m */; };
+		1C1AEF8C1F4EA624005C8FB8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1AEF8B1F4EA624005C8FB8 /* AppDelegate.m */; };
+		1C1AEF8F1F4EA624005C8FB8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1AEF8E1F4EA624005C8FB8 /* ViewController.m */; };
+		1C1AEF921F4EA624005C8FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1AEF901F4EA624005C8FB8 /* Main.storyboard */; };
+		1C1AEF941F4EA624005C8FB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C1AEF931F4EA624005C8FB8 /* Assets.xcassets */; };
+		1C1AEF971F4EA624005C8FB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C1AEF951F4EA624005C8FB8 /* LaunchScreen.storyboard */; };
+		1C1AEFA01F4EA7FA005C8FB8 /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1AEF9F1F4EA7FA005C8FB8 /* BaseTableViewController.m */; };
+		1C1AEFA31F4EAC96005C8FB8 /* PagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1AEFA21F4EAC96005C8FB8 /* PagerViewController.m */; };
+		1C1AEFA61F4EBA73005C8FB8 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1AEFA51F4EBA73005C8FB8 /* TestViewController.m */; };
+		32749EFB26E011CEF355C6AA /* Pods_ThSegmentedPagerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7B5685ACEE81C8F2BC88A0A /* Pods_ThSegmentedPagerExample.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		99C8C823198281240039193A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 99C8C7FB198281240039193A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99C8C802198281240039193A;
-			remoteInfo = THSegmentedPagerExample;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-THSegmentedPagerExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THSegmentedPagerTests.m; sourceTree = "<group>"; };
-		502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THSegmentedPagerExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9918A27B1BC6AA9600A15A77 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		99C8C803198281240039193A /* THSegmentedPagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = THSegmentedPagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		99C8C806198281240039193A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		99C8C808198281240039193A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		99C8C80A198281240039193A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		99C8C80E198281240039193A /* THSegmentedPagerExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THSegmentedPagerExample-Info.plist"; sourceTree = "<group>"; };
-		99C8C810198281240039193A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		99C8C812198281240039193A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		99C8C814198281240039193A /* THSegmentedPagerExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "THSegmentedPagerExample-Prefix.pch"; sourceTree = "<group>"; };
-		99C8C815198281240039193A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		99C8C816198281240039193A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		99C8C818198281240039193A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		99C8C81E198281240039193A /* THSegmentedPagerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THSegmentedPagerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99C8C81F198281240039193A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		99C8C827198281240039193A /* THSegmentedPagerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "THSegmentedPagerExampleTests-Info.plist"; sourceTree = "<group>"; };
-		99C8C829198281240039193A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		99C8C835198281580039193A /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		99C8C84519829C650039193A /* SamplePagedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePagedViewController.h; sourceTree = "<group>"; };
-		99C8C84619829C650039193A /* SamplePagedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePagedViewController.m; sourceTree = "<group>"; };
-		B0378D4EB5754459AF84BA34 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B86019CAE24EC80D2397F99D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		E9CACEA33C0AB51FDF71D7B5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-THSegmentedPagerExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C1AEF841F4EA624005C8FB8 /* ThSegmentedPagerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThSegmentedPagerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C1AEF881F4EA624005C8FB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1C1AEF8A1F4EA624005C8FB8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1C1AEF8B1F4EA624005C8FB8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1C1AEF8D1F4EA624005C8FB8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1C1AEF8E1F4EA624005C8FB8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1C1AEF911F4EA624005C8FB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C1AEF931F4EA624005C8FB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C1AEF961F4EA624005C8FB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C1AEF981F4EA624005C8FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1AEF9E1F4EA7FA005C8FB8 /* BaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewController.h; sourceTree = "<group>"; };
+		1C1AEF9F1F4EA7FA005C8FB8 /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
+		1C1AEFA11F4EAC96005C8FB8 /* PagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagerViewController.h; sourceTree = "<group>"; };
+		1C1AEFA21F4EAC96005C8FB8 /* PagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagerViewController.m; sourceTree = "<group>"; };
+		1C1AEFA41F4EBA73005C8FB8 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		1C1AEFA51F4EBA73005C8FB8 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		C8918BF900C98EEF7131C90D /* Pods-ThSegmentedPagerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThSegmentedPagerExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThSegmentedPagerExample/Pods-ThSegmentedPagerExample.release.xcconfig"; sourceTree = "<group>"; };
+		E7B5685ACEE81C8F2BC88A0A /* Pods_ThSegmentedPagerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ThSegmentedPagerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE52F4410F6DFBC3E444EFA1 /* Pods-ThSegmentedPagerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThSegmentedPagerExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThSegmentedPagerExample/Pods-ThSegmentedPagerExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		99C8C800198281240039193A /* Frameworks */ = {
+		1C1AEF811F4EA624005C8FB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C8C809198281240039193A /* CoreGraphics.framework in Frameworks */,
-				99C8C80B198281240039193A /* UIKit.framework in Frameworks */,
-				99C8C807198281240039193A /* Foundation.framework in Frameworks */,
-				3CCB8815A52E480C87E30210 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99C8C81B198281240039193A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99C8C820198281240039193A /* XCTest.framework in Frameworks */,
-				99C8C822198281240039193A /* UIKit.framework in Frameworks */,
-				99C8C821198281240039193A /* Foundation.framework in Frameworks */,
-				6A1FCE59DEC24EB61262FDDC /* libPods-THSegmentedPagerExampleTests.a in Frameworks */,
+				32749EFB26E011CEF355C6AA /* Pods_ThSegmentedPagerExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4ABE35039A712EBCB9D85E14 /* Pods */ = {
+		1C1AEF7B1F4EA624005C8FB8 = {
 			isa = PBXGroup;
 			children = (
-				E9CACEA33C0AB51FDF71D7B5 /* Pods.debug.xcconfig */,
-				B86019CAE24EC80D2397F99D /* Pods.release.xcconfig */,
-				57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */,
-				F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */,
+				1C1AEF861F4EA624005C8FB8 /* ThSegmentedPagerExample */,
+				1C1AEF851F4EA624005C8FB8 /* Products */,
+				FA563CC82ABD459C84377457 /* Pods */,
+				87591CA62F2EDC4A642B9CC4 /* Frameworks */,
 			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
-		502EEB751AE2DC9F000CFA05 /* Fixtures */ = {
+		1C1AEF851F4EA624005C8FB8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				502EEB761AE2DCBD000CFA05 /* Storyboard.storyboard */,
-			);
-			name = Fixtures;
-			sourceTree = "<group>";
-		};
-		99C8C7FA198281240039193A = {
-			isa = PBXGroup;
-			children = (
-				99C8C80C198281240039193A /* THSegmentedPagerExample */,
-				99C8C825198281240039193A /* THSegmentedPagerExampleTests */,
-				99C8C805198281240039193A /* Frameworks */,
-				99C8C804198281240039193A /* Products */,
-				4ABE35039A712EBCB9D85E14 /* Pods */,
-			);
-			indentWidth = 4;
-			sourceTree = "<group>";
-			tabWidth = 4;
-		};
-		99C8C804198281240039193A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				99C8C803198281240039193A /* THSegmentedPagerExample.app */,
-				99C8C81E198281240039193A /* THSegmentedPagerExampleTests.xctest */,
+				1C1AEF841F4EA624005C8FB8 /* ThSegmentedPagerExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		99C8C805198281240039193A /* Frameworks */ = {
+		1C1AEF861F4EA624005C8FB8 /* ThSegmentedPagerExample */ = {
 			isa = PBXGroup;
 			children = (
-				99C8C806198281240039193A /* Foundation.framework */,
-				99C8C808198281240039193A /* CoreGraphics.framework */,
-				99C8C80A198281240039193A /* UIKit.framework */,
-				99C8C81F198281240039193A /* XCTest.framework */,
-				B0378D4EB5754459AF84BA34 /* libPods.a */,
-				38BB6F8377F5CBD51D308DB8 /* libPods-THSegmentedPagerExampleTests.a */,
+				1C1AEF8A1F4EA624005C8FB8 /* AppDelegate.h */,
+				1C1AEF8B1F4EA624005C8FB8 /* AppDelegate.m */,
+				1C1AEF8D1F4EA624005C8FB8 /* ViewController.h */,
+				1C1AEF8E1F4EA624005C8FB8 /* ViewController.m */,
+				1C1AEF9E1F4EA7FA005C8FB8 /* BaseTableViewController.h */,
+				1C1AEF9F1F4EA7FA005C8FB8 /* BaseTableViewController.m */,
+				1C1AEFA11F4EAC96005C8FB8 /* PagerViewController.h */,
+				1C1AEFA21F4EAC96005C8FB8 /* PagerViewController.m */,
+				1C1AEFA41F4EBA73005C8FB8 /* TestViewController.h */,
+				1C1AEFA51F4EBA73005C8FB8 /* TestViewController.m */,
+				1C1AEF901F4EA624005C8FB8 /* Main.storyboard */,
+				1C1AEF931F4EA624005C8FB8 /* Assets.xcassets */,
+				1C1AEF951F4EA624005C8FB8 /* LaunchScreen.storyboard */,
+				1C1AEF981F4EA624005C8FB8 /* Info.plist */,
+				1C1AEF871F4EA624005C8FB8 /* Supporting Files */,
+			);
+			path = ThSegmentedPagerExample;
+			sourceTree = "<group>";
+		};
+		1C1AEF871F4EA624005C8FB8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C1AEF881F4EA624005C8FB8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		87591CA62F2EDC4A642B9CC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7B5685ACEE81C8F2BC88A0A /* Pods_ThSegmentedPagerExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		99C8C80C198281240039193A /* THSegmentedPagerExample */ = {
+		FA563CC82ABD459C84377457 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				99C8C84519829C650039193A /* SamplePagedViewController.h */,
-				99C8C84619829C650039193A /* SamplePagedViewController.m */,
-				99C8C815198281240039193A /* AppDelegate.h */,
-				99C8C816198281240039193A /* AppDelegate.m */,
-				99C8C818198281240039193A /* Images.xcassets */,
-				99C8C80D198281240039193A /* Supporting Files */,
-				99C8C835198281580039193A /* iPhone.storyboard */,
-				9918A27B1BC6AA9600A15A77 /* Launch Screen.storyboard */,
+				FE52F4410F6DFBC3E444EFA1 /* Pods-ThSegmentedPagerExample.debug.xcconfig */,
+				C8918BF900C98EEF7131C90D /* Pods-ThSegmentedPagerExample.release.xcconfig */,
 			);
-			path = THSegmentedPagerExample;
-			sourceTree = "<group>";
-		};
-		99C8C80D198281240039193A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				99C8C80E198281240039193A /* THSegmentedPagerExample-Info.plist */,
-				99C8C80F198281240039193A /* InfoPlist.strings */,
-				99C8C812198281240039193A /* main.m */,
-				99C8C814198281240039193A /* THSegmentedPagerExample-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		99C8C825198281240039193A /* THSegmentedPagerExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				99C8C826198281240039193A /* Supporting Files */,
-				502EEB731AE2DBFF000CFA05 /* THSegmentedPagerTests.m */,
-			);
-			path = THSegmentedPagerExampleTests;
-			sourceTree = "<group>";
-		};
-		99C8C826198281240039193A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				502EEB751AE2DC9F000CFA05 /* Fixtures */,
-				99C8C827198281240039193A /* THSegmentedPagerExampleTests-Info.plist */,
-				99C8C828198281240039193A /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		99C8C802198281240039193A /* THSegmentedPagerExample */ = {
+		1C1AEF831F4EA624005C8FB8 /* ThSegmentedPagerExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99C8C82F198281240039193A /* Build configuration list for PBXNativeTarget "THSegmentedPagerExample" */;
+			buildConfigurationList = 1C1AEF9B1F4EA624005C8FB8 /* Build configuration list for PBXNativeTarget "ThSegmentedPagerExample" */;
 			buildPhases = (
-				2732873956584C6784AB8C11 /* Check Pods Manifest.lock */,
-				99C8C7FF198281240039193A /* Sources */,
-				99C8C800198281240039193A /* Frameworks */,
-				99C8C801198281240039193A /* Resources */,
-				49B247F1B39A4B758AF32B62 /* Copy Pods Resources */,
+				031A4F227C0F2DE88C26BA03 /* [CP] Check Pods Manifest.lock */,
+				1C1AEF801F4EA624005C8FB8 /* Sources */,
+				1C1AEF811F4EA624005C8FB8 /* Frameworks */,
+				1C1AEF821F4EA624005C8FB8 /* Resources */,
+				99318926B5411CB48DAF2087 /* [CP] Embed Pods Frameworks */,
+				B2AE61DB94D54429ADB2158F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = THSegmentedPagerExample;
-			productName = THSegmentedPagerExample;
-			productReference = 99C8C803198281240039193A /* THSegmentedPagerExample.app */;
+			name = ThSegmentedPagerExample;
+			productName = ThSegmentedPagerExample;
+			productReference = 1C1AEF841F4EA624005C8FB8 /* ThSegmentedPagerExample.app */;
 			productType = "com.apple.product-type.application";
-		};
-		99C8C81D198281240039193A /* THSegmentedPagerExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 99C8C832198281240039193A /* Build configuration list for PBXNativeTarget "THSegmentedPagerExampleTests" */;
-			buildPhases = (
-				034D194D6DD5C8CB06F7360E /* Check Pods Manifest.lock */,
-				99C8C81A198281240039193A /* Sources */,
-				99C8C81B198281240039193A /* Frameworks */,
-				99C8C81C198281240039193A /* Resources */,
-				E802B37DE433CB88DDBF430D /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				99C8C824198281240039193A /* PBXTargetDependency */,
-			);
-			name = THSegmentedPagerExampleTests;
-			productName = THSegmentedPagerExampleTests;
-			productReference = 99C8C81E198281240039193A /* THSegmentedPagerExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		99C8C7FB198281240039193A /* Project object */ = {
+		1C1AEF7C1F4EA624005C8FB8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = 3Bus;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "胡金友";
 				TargetAttributes = {
-					99C8C81D198281240039193A = {
-						TestTargetID = 99C8C802198281240039193A;
+					1C1AEF831F4EA624005C8FB8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NFE8L9VTV6;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
-			buildConfigurationList = 99C8C7FE198281240039193A /* Build configuration list for PBXProject "THSegmentedPagerExample" */;
+			buildConfigurationList = 1C1AEF7F1F4EA624005C8FB8 /* Build configuration list for PBXProject "ThSegmentedPagerExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 99C8C7FA198281240039193A;
-			productRefGroup = 99C8C804198281240039193A /* Products */;
+			mainGroup = 1C1AEF7B1F4EA624005C8FB8;
+			productRefGroup = 1C1AEF851F4EA624005C8FB8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				99C8C802198281240039193A /* THSegmentedPagerExample */,
-				99C8C81D198281240039193A /* THSegmentedPagerExampleTests */,
+				1C1AEF831F4EA624005C8FB8 /* ThSegmentedPagerExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		99C8C801198281240039193A /* Resources */ = {
+		1C1AEF821F4EA624005C8FB8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C8C811198281240039193A /* InfoPlist.strings in Resources */,
-				99C8C836198281580039193A /* iPhone.storyboard in Resources */,
-				9918A27C1BC6AA9600A15A77 /* Launch Screen.storyboard in Resources */,
-				99C8C819198281240039193A /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99C8C81C198281240039193A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9918A27A1BC6AA0C00A15A77 /* Images.xcassets in Resources */,
-				99C8C82A198281240039193A /* InfoPlist.strings in Resources */,
-				502EEB771AE2DCBD000CFA05 /* Storyboard.storyboard in Resources */,
+				1C1AEF971F4EA624005C8FB8 /* LaunchScreen.storyboard in Resources */,
+				1C1AEF941F4EA624005C8FB8 /* Assets.xcassets in Resources */,
+				1C1AEF921F4EA624005C8FB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		034D194D6DD5C8CB06F7360E /* Check Pods Manifest.lock */ = {
+		031A4F227C0F2DE88C26BA03 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2732873956584C6784AB8C11 /* Check Pods Manifest.lock */ = {
+		99318926B5411CB48DAF2087 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThSegmentedPagerExample/Pods-ThSegmentedPagerExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		49B247F1B39A4B758AF32B62 /* Copy Pods Resources */ = {
+		B2AE61DB94D54429ADB2158F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E802B37DE433CB88DDBF430D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-THSegmentedPagerExampleTests/Pods-THSegmentedPagerExampleTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThSegmentedPagerExample/Pods-ThSegmentedPagerExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		99C8C7FF198281240039193A /* Sources */ = {
+		1C1AEF801F4EA624005C8FB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C8C817198281240039193A /* AppDelegate.m in Sources */,
-				99C8C84719829C650039193A /* SamplePagedViewController.m in Sources */,
-				99C8C813198281240039193A /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99C8C81A198281240039193A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				502EEB741AE2DBFF000CFA05 /* THSegmentedPagerTests.m in Sources */,
+				1C1AEFA61F4EBA73005C8FB8 /* TestViewController.m in Sources */,
+				1C1AEF8F1F4EA624005C8FB8 /* ViewController.m in Sources */,
+				1C1AEFA31F4EAC96005C8FB8 /* PagerViewController.m in Sources */,
+				1C1AEF8C1F4EA624005C8FB8 /* AppDelegate.m in Sources */,
+				1C1AEFA01F4EA7FA005C8FB8 /* BaseTableViewController.m in Sources */,
+				1C1AEF891F4EA624005C8FB8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		99C8C824198281240039193A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 99C8C802198281240039193A /* THSegmentedPagerExample */;
-			targetProxy = 99C8C823198281240039193A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		99C8C80F198281240039193A /* InfoPlist.strings */ = {
+		1C1AEF901F4EA624005C8FB8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				99C8C810198281240039193A /* en */,
+				1C1AEF911F4EA624005C8FB8 /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		99C8C828198281240039193A /* InfoPlist.strings */ = {
+		1C1AEF951F4EA624005C8FB8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				99C8C829198281240039193A /* en */,
+				1C1AEF961F4EA624005C8FB8 /* Base */,
 			);
-			name = InfoPlist.strings;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		99C8C82D198281240039193A /* Debug */ = {
+		1C1AEF991F4EA624005C8FB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -414,40 +285,48 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		99C8C82E198281240039193A /* Release */ = {
+		1C1AEF9A1F4EA624005C8FB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -455,138 +334,87 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		99C8C830198281240039193A /* Debug */ = {
+		1C1AEF9C1F4EA624005C8FB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9CACEA33C0AB51FDF71D7B5 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = FE52F4410F6DFBC3E444EFA1 /* Pods-ThSegmentedPagerExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "THSegmentedPagerExample/THSegmentedPagerExample-Prefix.pch";
-				INFOPLIST_FILE = "THSegmentedPagerExample/THSegmentedPagerExample-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.3bus.${PRODUCT_NAME:rfc1034identifier}";
+				DEVELOPMENT_TEAM = NFE8L9VTV6;
+				INFOPLIST_FILE = ThSegmentedPagerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jyhu.ThSegmentedPagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				PROVISIONING_PROFILE = "4586ff62-821a-4e40-99a7-7682f668d1ca";
+				PROVISIONING_PROFILE_SPECIFIER = "hujinyou-mbp-dev-all-170329";
 			};
 			name = Debug;
 		};
-		99C8C831198281240039193A /* Release */ = {
+		1C1AEF9D1F4EA624005C8FB8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B86019CAE24EC80D2397F99D /* Pods.release.xcconfig */;
+			baseConfigurationReference = C8918BF900C98EEF7131C90D /* Pods-ThSegmentedPagerExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "THSegmentedPagerExample/THSegmentedPagerExample-Prefix.pch";
-				INFOPLIST_FILE = "THSegmentedPagerExample/THSegmentedPagerExample-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.3bus.${PRODUCT_NAME:rfc1034identifier}";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ThSegmentedPagerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jyhu.ThSegmentedPagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		99C8C833198281240039193A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57357A84FB65AC89CDE5F74B /* Pods-THSegmentedPagerExampleTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/THSegmentedPagerExample.app/THSegmentedPagerExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "THSegmentedPagerExample/THSegmentedPagerExample-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "THSegmentedPagerExampleTests/THSegmentedPagerExampleTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.3bus.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		99C8C834198281240039193A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F436489982B76D37541A6DB1 /* Pods-THSegmentedPagerExampleTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/THSegmentedPagerExample.app/THSegmentedPagerExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "THSegmentedPagerExample/THSegmentedPagerExample-Prefix.pch";
-				INFOPLIST_FILE = "THSegmentedPagerExampleTests/THSegmentedPagerExampleTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "it.3bus.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		99C8C7FE198281240039193A /* Build configuration list for PBXProject "THSegmentedPagerExample" */ = {
+		1C1AEF7F1F4EA624005C8FB8 /* Build configuration list for PBXProject "ThSegmentedPagerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99C8C82D198281240039193A /* Debug */,
-				99C8C82E198281240039193A /* Release */,
+				1C1AEF991F4EA624005C8FB8 /* Debug */,
+				1C1AEF9A1F4EA624005C8FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99C8C82F198281240039193A /* Build configuration list for PBXNativeTarget "THSegmentedPagerExample" */ = {
+		1C1AEF9B1F4EA624005C8FB8 /* Build configuration list for PBXNativeTarget "ThSegmentedPagerExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				99C8C830198281240039193A /* Debug */,
-				99C8C831198281240039193A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		99C8C832198281240039193A /* Build configuration list for PBXNativeTarget "THSegmentedPagerExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				99C8C833198281240039193A /* Debug */,
-				99C8C834198281240039193A /* Release */,
+				1C1AEF9C1F4EA624005C8FB8 /* Debug */,
+				1C1AEF9D1F4EA624005C8FB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 99C8C7FB198281240039193A /* Project object */;
+	rootObject = 1C1AEF7C1F4EA624005C8FB8 /* Project object */;
 }
