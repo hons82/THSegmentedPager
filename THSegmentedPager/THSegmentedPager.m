@@ -69,9 +69,28 @@
     
     // Obtain the ScrollViewDelegate
     self.shouldBounce = YES;
+    
+    // 遍历获取navigation的侧滑手势
+    UIScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer;
+    
+    if (self.navigationController) {
+        if (self.navigationController.view.gestureRecognizers.count > 0) {
+            for (UIGestureRecognizer *recognizer in self.navigationController.view.gestureRecognizers) {
+                if ([recognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+                    screenEdgePanGestureRecognizer = (UIScreenEdgePanGestureRecognizer *)recognizer;
+                    break;
+                }
+            }
+        }
+    }
+    
     for (UIView *view in self.pri_pageViewController.view.subviews ) {
         if ([view isKindOfClass:[UIScrollView class]]) {
             ((UIScrollView *)view).delegate = self;
+            if (screenEdgePanGestureRecognizer) {
+                // 当时侧滑返回的时候，禁掉scrollview的滑动响应
+                [((UIScrollView *)view).panGestureRecognizer requireGestureRecognizerToFail:screenEdgePanGestureRecognizer];
+            }
         }
     }
 }
