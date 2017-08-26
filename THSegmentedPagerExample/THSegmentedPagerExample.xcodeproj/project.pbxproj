@@ -152,8 +152,8 @@
 				TargetAttributes = {
 					1C1AEF831F4EA624005C8FB8 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = EHNB49T236;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = NFE8L9VTV6;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -201,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		99318926B5411CB48DAF2087 /* [CP] Embed Pods Frameworks */ = {
@@ -370,13 +370,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = EHNB49T236;
+				DEVELOPMENT_TEAM = NFE8L9VTV6;
 				INFOPLIST_FILE = ThSegmentedPagerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jyhu.ThSegmentedPagerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4586ff62-821a-4e40-99a7-7682f668d1ca";
+				PROVISIONING_PROFILE_SPECIFIER = "hujinyou-mbp-dev-all-170329";
 			};
 			name = Debug;
 		};
@@ -386,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = EHNB49T236;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ThSegmentedPagerExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jyhu.ThSegmentedPagerExample;

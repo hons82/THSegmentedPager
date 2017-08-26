@@ -20,12 +20,20 @@
 @property (strong, nonatomic) UIPageViewController *pri_pageViewController;
 @property (strong, nonatomic) UIView *pri_contentContainer;
 @property (strong, nonatomic) NSMutableArray *pri_pages;
+@property (assign, nonatomic) UIEdgeInsets edgeInsets;
 
 @end
 
 @implementation THSegmentedPager
 
 @synthesize pri_pages = _pri_pages;
+
+- (instancetype)initWithContentEdgeInsets:(UIEdgeInsets)edgeInsets {
+    if (self = [self init]) {
+        self.edgeInsets = edgeInsets;
+    }
+    return self;
+}
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -136,9 +144,7 @@
     } else if (!hidden && self.pri_segmentControl.hidden) {
         self.pri_segmentControl.hidden = NO;
         [UIView animateWithDuration:duration animations:^{
-#warning - 需要在动画结束以后再改变container的高度，否则会在动画的过程中导致底部出现一部分的空白
-            CGRect remainder;
-            CGRect slice;
+            CGRect remainder, slice;
             CGRectDivide(self.pri_contentContainer.frame, &slice, &remainder, CGRectGetHeight(self.pri_segmentControl.frame), CGRectMinYEdge);
             self.pri_contentContainer.frame = remainder;
             self.pri_segmentControl.alpha = 1.0f;
@@ -293,7 +299,7 @@
 - (UIView *)pri_contentContainer
 {
     if (!_pri_contentContainer) {
-        _pri_contentContainer = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.pri_segmentControl.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetMaxY(self.pri_segmentControl.frame))];
+        _pri_contentContainer = [[UIView alloc] initWithFrame:CGRectMake(self.edgeInsets.left, CGRectGetMaxY(self.pri_segmentControl.frame), CGRectGetWidth(self.view.frame) - self.edgeInsets.left - self.edgeInsets.right, CGRectGetHeight(self.view.frame) - CGRectGetMaxY(self.pri_segmentControl.frame) - self.edgeInsets.bottom)];
         _pri_contentContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _pri_contentContainer.backgroundColor = [UIColor clearColor];
     }
@@ -317,7 +323,7 @@
 - (HMSegmentedControl *)pri_segmentControl
 {
     if (!_pri_segmentControl) {
-        _pri_segmentControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 40)];
+        _pri_segmentControl = [[HMSegmentedControl alloc] initWithFrame:CGRectMake(self.edgeInsets.left, self.edgeInsets.top, CGRectGetWidth(self.view.bounds) - self.edgeInsets.left - self.edgeInsets.right, 40)];
         _pri_segmentControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _pri_segmentControl.backgroundColor = [UIColor colorWithRed:69/255.0 green:69/255.0 blue:69/255.0 alpha:1];
         _pri_segmentControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithRed:127/255.0 green:127/255.0 blue:127/255.0 alpha:1]};
@@ -404,6 +410,15 @@
 
 - (UIViewController *)selectedController {
     return self.pri_pages[[self.pri_segmentControl selectedSegmentIndex]];
+}
+
+- (void)setCurrentIndex:(NSUInteger)currentIndex
+{
+    _currentIndex = currentIndex;
+    
+    if ([self respondsToSelector:@selector(pageViewController:changeToSelectedIndex:)]) {
+        [self pageViewController:self changeToSelectedIndex:currentIndex];
+    }
 }
 
 @end

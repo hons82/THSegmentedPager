@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <HMSegmentedControl/HMSegmentedControl.h>
+#import "THSegmentedPageViewControllerDelegate.h"
 
-@interface THSegmentedPager : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@interface THSegmentedPager : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate, THSegmentedPageViewControllerDelegate>
+
+- (instancetype)initWithContentEdgeInsets:(UIEdgeInsets)edgeInsets;
 
 @property (strong, nonatomic, readonly) HMSegmentedControl *pageControl;
 @property (strong, nonatomic, readonly) UIPageViewController *pageViewController;
@@ -28,7 +31,9 @@
 - (void)setupPagesFromStoryboardWithPageIdentifiers:(NSArray <NSString *> *)pageIdentifiers;
 
 - (void)setPageControlHidden:(BOOL)hidden animated:(BOOL)animated;
+
 - (void)setSelectedPageIndex:(NSUInteger)index animated:(BOOL)animated;
+
 - (void)setPageControlHeight:(CGFloat)pageControlHeight;
 - (void)setPageControlHeight:(CGFloat)pageControlHeight animated:(BOOL)animated;
 

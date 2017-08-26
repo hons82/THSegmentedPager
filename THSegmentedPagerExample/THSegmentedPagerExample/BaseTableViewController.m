@@ -11,6 +11,8 @@
 
 @interface BaseTableViewController ()
 
+@property (retain, nonatomic) UIBarButtonItem *barButtonItem;
+
 @end
 
 @implementation BaseTableViewController
@@ -37,6 +39,16 @@
             self.segmentedPager.segmentedPager.title = self.title;
         }
     }
+    
+    self.barButtonItem.title = self.title;
+    self.segmentedPager.navigationItem.rightBarButtonItem = self.barButtonItem;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.segmentedPager.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void)viewDidLoad {
@@ -48,6 +60,23 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - action
+
+- (void)barbuttonAction
+{
+    
+}
+
+#pragma mark - getter
+
+- (UIBarButtonItem *)barButtonItem
+{
+    if (!_barButtonItem) {
+        _barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleDone target:self action:@selector(barbuttonAction)];
+    }
+    return _barButtonItem;
 }
 
 #pragma mark - Table view data source

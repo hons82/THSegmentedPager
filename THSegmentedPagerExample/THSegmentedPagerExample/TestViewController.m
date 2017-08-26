@@ -24,7 +24,8 @@
     
     PagerViewController *p1 = [[PagerViewController alloc] init];
     p1.title = @"P1";
-    PagerViewController *p2 = [[PagerViewController alloc] init];
+    PagerViewController *p2 = [[PagerViewController alloc] initWithContentEdgeInsets:UIEdgeInsetsMake(20, 30, 40, 50)];
+    p2.view.backgroundColor = [UIColor redColor];
     p2.title = @"P2";
     PagerViewController *p3 = [[PagerViewController alloc] init];
     p3.title = @"P3";
