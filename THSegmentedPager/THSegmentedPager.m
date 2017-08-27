@@ -440,6 +440,17 @@
     }
 }
 
+- (void)setScrollEnable:(BOOL)scrollEnable
+{
+    _scrollEnable = scrollEnable;
+    
+    for (UIView *view in self.pri_pageViewController.view.subviews ) {
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            ((UIScrollView *)view).scrollEnabled = scrollEnable;
+        }
+    }
+}
+
 @end
 
 

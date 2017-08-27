@@ -18,9 +18,10 @@
 @property (strong, nonatomic, readonly) UIPageViewController *pageViewController;
 @property (strong, nonatomic, readonly) UIView *contentContainer;
 
-@property (assign, nonatomic) BOOL needPagerAnimateWhenSegmentSelectionChanged;
+@property (assign, nonatomic) BOOL needPagerAnimateWhenSegmentSelectionChanged; // default is no
 
 @property (strong, nonatomic) NSArray <UIViewController *> *pages;
+@property (assign, nonatomic) BOOL scrollEnable;
 @property (assign, nonatomic) BOOL shouldBounce;
 
 /*! Instead of setting the pages manually you can give to the controller an array of identifiers which will be loaded from the storyboard at runtime
