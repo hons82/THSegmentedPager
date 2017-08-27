@@ -29,29 +29,8 @@
 @synthesize pri_pages = _pri_pages;
 
 - (instancetype)initWithContentEdgeInsets:(UIEdgeInsets)edgeInsets {
-    if (self = [self init]) {
-        self.edgeInsets = edgeInsets;
-    }
-    return self;
-}
-
-- (instancetype)init {
     if (self = [super init]) {
-        self.needPagerAnimateWhenSegmentSelectionChanged = NO;
-    }
-    return self;
-}
-
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        self.needPagerAnimateWhenSegmentSelectionChanged = NO;
-    }
-    return self;
-}
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        self.needPagerAnimateWhenSegmentSelectionChanged = NO;
+        self.edgeInsets = edgeInsets;
     }
     return self;
 }
@@ -73,13 +52,11 @@
     // 遍历获取navigation的侧滑手势
     UIScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer;
     
-    if (self.navigationController) {
-        if (self.navigationController.view.gestureRecognizers.count > 0) {
-            for (UIGestureRecognizer *recognizer in self.navigationController.view.gestureRecognizers) {
-                if ([recognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
-                    screenEdgePanGestureRecognizer = (UIScreenEdgePanGestureRecognizer *)recognizer;
-                    break;
-                }
+    if (self.navigationController && self.navigationController.view.gestureRecognizers.count > 0) {
+        for (UIGestureRecognizer *recognizer in self.navigationController.view.gestureRecognizers) {
+            if ([recognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]]) {
+                screenEdgePanGestureRecognizer = (UIScreenEdgePanGestureRecognizer *)recognizer;
+                break;
             }
         }
     }
@@ -435,9 +412,7 @@
 {
     _currentIndex = currentIndex;
     
-    if ([self respondsToSelector:@selector(pageViewController:changeToSelectedIndex:)]) {
-        [self pageViewController:self changeToSelectedIndex:currentIndex];
-    }
+    [self pageViewController:self changeToSelectedIndex:currentIndex];
 }
 
 - (void)setScrollEnable:(BOOL)scrollEnable
@@ -450,6 +425,8 @@
         }
     }
 }
+
+- (void)pageViewController:(THSegmentedPager *)controller changeToSelectedIndex:(NSUInteger)index {}
 
 @end
 

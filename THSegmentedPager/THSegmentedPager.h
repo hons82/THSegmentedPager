@@ -10,7 +10,7 @@
 #import <HMSegmentedControl/HMSegmentedControl.h>
 #import "THSegmentedPageViewControllerDelegate.h"
 
-@interface THSegmentedPager : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate, THSegmentedPageViewControllerDelegate>
+@interface THSegmentedPager : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 
 - (instancetype)initWithContentEdgeInsets:(UIEdgeInsets)edgeInsets;
 
@@ -18,7 +18,7 @@
 @property (strong, nonatomic, readonly) UIPageViewController *pageViewController;
 @property (strong, nonatomic, readonly) UIView *contentContainer;
 
-@property (assign, nonatomic) BOOL needPagerAnimateWhenSegmentSelectionChanged; // default is no
+@property (assign, nonatomic) BOOL needPagerAnimateWhenSegmentSelectionChanged; // default is YES
 
 @property (strong, nonatomic) NSArray <UIViewController *> *pages;
 @property (assign, nonatomic) BOOL scrollEnable;
@@ -47,6 +47,16 @@
 /*! The control will ask from every viewcontroller an updated title string
  */
 - (void)updateTitleLabels;
+
+
+
+/**
+ 当前类需要实现的方法，用于返回当前选择的页面索引
+ 
+ @param controller self
+ @param index 页面索引
+ */
+- (void)pageViewController:(THSegmentedPager *)controller changeToSelectedIndex:(NSUInteger)index;
 
 @end
 
