@@ -1,0 +1,19 @@
+PODS:
+  - HMSegmentedControl (1.5.3)
+  - THSegmentedPager (1.1.3):
+    - HMSegmentedControl (~> 1.5.2)
+
+DEPENDENCIES:
+  - THSegmentedPager (from `../../THSegmentedPager`)
+
+EXTERNAL SOURCES:
+  THSegmentedPager:
+    :path: ../../THSegmentedPager
+
+SPEC CHECKSUMS:
+  HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
+  THSegmentedPager: 9d4fb2acc78d77246caf1e71d2e878bf5977b904
+
+PODFILE CHECKSUM: 4c62b73aa77c867cac98f2dddce0bf6dc9b16228
+
+COCOAPODS: 1.2.1
