@@ -287,6 +287,11 @@
                                            animated:self.needPagerAnimateWhenSegmentSelectionChanged completion:completionBlock];
     } else {
         [self.pri_segmentControl setSelectedSegmentIndex:self.currentIndex animated:NO];
+        
+        if (self.nextIndex == self.currentIndex) {
+            self.userDraggingStartedTransitionInProgress = NO;
+            [self setSelectedPageIndex:self.currentIndex animated:NO];
+        }
     }
 }
 
