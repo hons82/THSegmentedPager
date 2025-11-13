@@ -74,11 +74,11 @@ This is a sample initialization taken from the ExampleProject.
 }
 ```
 
-#Contributions
+# Contributions
 
 ...are really welcome. If you have an idea just fork the library change it and if its useful for others and not affecting the functionality of the library for other users I'll insert it
 
-###Contributors
+### Contributors
 
 [Victor Ilyukevich](https://github.com/yas375)
 - Added automated Tests
